@@ -172,6 +172,7 @@
        LOGO — minimal animations on mobile
     ═══════════════════════════════════════════ */
       .logo-wrap {
+        margin-top: 20px;
         position: relative;
         width: clamp(108px, 22vmin, 172px);
         height: clamp(108px, 22vmin, 172px);
@@ -767,6 +768,53 @@
         }
       }
 
+      @media (max-width: 768px) {
+        /* Reduce the number of petals */
+        .petal {
+          animation-duration: 20s !important; /* Slower animation */
+          animation-iteration-count: 1; /* Only one iteration */
+        }
+
+        /* Simplify soundwave animation */
+        .soundwave .sw {
+          animation: none !important; /* Disable animation */
+          opacity: 0.5; /* Static bars */
+        }
+
+        /* Simplify logo animation */
+        .logo-ring {
+          animation: none !important; /* Disable spinning */
+        }
+        .logo-inner {
+          animation: none !important; /* Disable floating */
+        }
+
+        /* Simplify background gradient */
+        .bg {
+          background: var(--bg); /* Static background */
+        }
+
+        /* Disable corner frame animations */
+        .frame {
+          animation: none !important;
+          opacity: 1; /* Always visible */
+        }
+
+        /* Disable tap hint animation */
+        .tap-hint {
+          animation: none !important;
+          opacity: 1; /* Always visible */
+        }
+
+        /* Disable music button animations */
+        .pl-btn {
+          animation: none !important;
+        }
+        .pl-btn.playing::after {
+          animation: none !important;
+        }
+      }
+
       /* ═══════════════════════════════════════════
        HELPERS
     ═══════════════════════════════════════════ */
@@ -888,13 +936,17 @@
     <!-- Main -->
     <div class="stage">
       <div class="card">
-        <!-- <div class="label-row">
-          <div class="lline"></div>
+        <div class="label-row">
+          <!-- <div class="lline"></div>
           <div class="lgem"></div>
           <span class="ltext">Est. 2025 · India</span>
           <div class="lgem"></div>
-          <div class="lline r"></div>
-        </div> -->
+          <div class="lline r"></div> -->
+          <div class="badge">
+            <div class="badge-pulse"></div>
+            💖 from Guwahati, Assam
+          </div>
+        </div>
 
         <div class="logo-wrap">
           <div class="logo-ring"></div>
@@ -939,11 +991,6 @@
           <div class="sw d"></div>
           <div class="sw d"></div>
           <div class="sw d"></div>
-        </div>
-
-        <div class="badge">
-          <div class="badge-pulse"></div>
-          💖 from Guwahati, Assam
         </div>
       </div>
     </div>
@@ -1078,8 +1125,8 @@
       });
 
       // ── PETALS ─────────────────────────────────────────────
-      // Mobile: 8 petals, slow | Tablet: 14 | Desktop: 22
-      const count = isMobile ? 8 : window.innerWidth < 1025 ? 14 : 22;
+      // Mobile: 4 petals, slow | Tablet: 10 | Desktop: 22
+      const count = isMobile ? 4 : window.innerWidth < 1025 ? 10 : 22;
       const wrap = document.getElementById("petals");
       const colors = [
         "rgba(223,168,152,0.5)",
@@ -1098,11 +1145,8 @@
       for (let i = 0; i < count; i++) {
         const p = document.createElement("div");
         p.className = "petal";
-        const s = Math.random() * 11 + 5;
-        // Mobile gets very slow petals = very few repaints
-        const dur = isMobile
-          ? Math.random() * 8 + 16 // 16-24s on mobile
-          : Math.random() * 12 + 10; // 10-22s on desktop
+        const s = Math.random() * 8 + 4; // Smaller petals
+        const dur = isMobile ? Math.random() * 6 + 10 : Math.random() * 12 + 10;
         p.style.cssText = `
         width:${s}px;
         height:${s * 0.68}px;
@@ -1110,7 +1154,7 @@
         background:${colors[i % colors.length]};
         border-radius:${shapes[i % shapes.length]};
         animation-duration:${dur}s;
-        animation-delay:${Math.random() * 20}s;
+        animation-delay:${Math.random() * 10}s;
       `;
         wrap.appendChild(p);
       }
