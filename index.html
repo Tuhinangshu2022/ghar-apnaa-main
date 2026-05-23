@@ -1,1163 +1,1117 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="scroll-smooth" lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>GharApnaa — Coming Soon</title>
-    <meta
-      name="description"
-      content="Har sapne ko mile apnaa address. India ke har ghar ke liye."
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Ghar Apnaa | Architectural Integrity</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,200;0,300;1,200;1,300&family=Kalam:wght@300&family=DM+Sans:wght@200;300&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
       rel="stylesheet"
     />
-
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&amp;family=Playfair+Display:wght@400;600;700&amp;family=Montserrat:wght@300;400;500&amp;family=Inter:wght@400;600&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "yolo-charcoal": "#1a1a1a",
+              "yolo-sage": "#e8eee4",
+              "yolo-gold": "#c5a059",
+              "inverse-primary": "#dec1ac",
+              concrete: "#D1D1D1",
+              "surface-tint": "#705a49",
+              "surface-container-high": "#eae7e7",
+              "on-tertiary-fixed": "#1a1c1c",
+              "on-secondary-fixed": "#261900",
+              "primary-container": "#4a3728",
+              "on-secondary-fixed-variant": "#5d4201",
+              surface: "#fcf9f8",
+              "on-background": "#1c1b1b",
+              background: "#fcf9f8",
+              "tertiary-fixed": "#e2e2e2",
+              "on-error-container": "#93000a",
+              "on-surface-variant": "#4e453e",
+              "tertiary-container": "#3a3b3b",
+              "on-secondary": "#ffffff",
+              "on-primary": "#ffffff",
+              "on-error": "#ffffff",
+              "surface-container-highest": "#e5e2e1",
+              "error-container": "#ffdad6",
+              "on-tertiary-container": "#a5a5a5",
+              "inverse-on-surface": "#f3f0ef",
+              "primary-fixed": "#fbddc7",
+              "tertiary-fixed-dim": "#c6c6c6",
+              tertiary: "#242626",
+              "on-primary-fixed-variant": "#574333",
+              "on-surface": "#1c1b1b",
+              "on-tertiary-fixed-variant": "#454747",
+              primary: "#322214",
+              "on-tertiary": "#ffffff",
+              "surface-container-low": "#f6f3f2",
+              "on-primary-container": "#bba08c",
+              outline: "#80756d",
+              "on-secondary-container": "#785a1a",
+              "surface-variant": "#e5e2e1",
+              "surface-dim": "#dcd9d9",
+              "secondary-fixed-dim": "#e9c176",
+              "warm-ivory": "#F9F7F2",
+              "secondary-container": "#fed488",
+              "surface-container": "#f0eded",
+              "surface-container-lowest": "#ffffff",
+              "secondary-fixed": "#ffdea5",
+              "primary-fixed-dim": "#dec1ac",
+              "surface-bright": "#fcf9f8",
+              error: "#ba1a1a",
+              secondary: "#775a19",
+              "inverse-surface": "#313030",
+              "outline-variant": "#d2c4bb",
+              "on-primary-fixed": "#28180b",
+              "sage-tint": "#8E9481",
+            },
+            borderRadius: {
+              DEFAULT: "0.125rem",
+              lg: "0.25rem",
+              xl: "0.5rem",
+              full: "0.75rem",
+              blob: "30% 70% 70% 30% / 30% 30% 70% 70%",
+            },
+            spacing: {
+              gutter: "32px",
+              "container-max": "1280px",
+              "stack-unit": "8px",
+              "margin-mobile": "20px",
+              "margin-desktop": "64px",
+            },
+            fontFamily: {
+              "display-lg-mobile": ["Cormorant Garamond", "serif"],
+              "body-lg": ["Montserrat"],
+              "headline-sm": ["Cormorant Garamond", "serif"],
+              "headline-md": ["Cormorant Garamond", "serif"],
+              "display-lg": ["Cormorant Garamond", "serif"],
+              "body-md": ["Montserrat"],
+              "label-caps": ["Inter"],
+            },
+            fontSize: {
+              "display-lg-mobile": [
+                "56px",
+                { lineHeight: "1.1", fontWeight: "700" },
+              ],
+              "body-lg": ["18px", { lineHeight: "1.6", fontWeight: "400" }],
+              "headline-sm": ["36px", { lineHeight: "1.2", fontWeight: "600" }],
+              "headline-md": ["48px", { lineHeight: "1.2", fontWeight: "600" }],
+              "display-lg": [
+                "96px",
+                {
+                  lineHeight: "1",
+                  letterSpacing: "-0.03em",
+                  fontWeight: "700",
+                },
+              ],
+              "body-md": ["16px", { lineHeight: "1.6", fontWeight: "400" }],
+              "label-caps": [
+                "12px",
+                { lineHeight: "1", letterSpacing: "0.1em", fontWeight: "600" },
+              ],
+            },
+          },
+        },
+      };
+    </script>
     <style>
-      *,
-      *::before,
-      *::after {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
+      html {
+        scroll-behavior: smooth;
       }
 
-      :root {
-        --bg: #fdf7f0;
-        --ink: #261a15;
-        --muted: #9a7d6e;
-        --accent: #b86a45;
-        --gold: #c9955a;
-        --rose: #dfa898;
-      }
-
-      html,
-      body {
-        height: 100%;
-        overflow: hidden;
-      }
-      body {
-        font-family: "DM Sans", sans-serif;
-        background: var(--bg);
-        -webkit-font-smoothing: antialiased;
-        /* Force GPU compositing on body */
-        transform: translateZ(0);
-      }
-
-      /* ═══════════════════════════════════════════
-       BACKGROUND — pure CSS, zero JS, zero blur
-       Mobile: static gradient only
-       Desktop: soft animated gradient
-    ═══════════════════════════════════════════ */
-      .bg {
-        position: fixed;
-        inset: 0;
-        z-index: 0;
-        background: radial-gradient(
-            ellipse 70% 55% at 12% 18%,
-            rgba(245, 200, 184, 0.35) 0%,
-            transparent 60%
-          ),
-          radial-gradient(
-            ellipse 65% 50% at 88% 14%,
-            rgba(240, 232, 216, 0.35) 0%,
-            transparent 55%
-          ),
-          radial-gradient(
-            ellipse 60% 65% at 82% 88%,
-            rgba(200, 220, 232, 0.3) 0%,
-            transparent 55%
-          ),
-          radial-gradient(
-            ellipse 70% 55% at 10% 82%,
-            rgba(212, 232, 200, 0.3) 0%,
-            transparent 55%
-          ),
-          var(--bg);
-      }
-
-      /* ═══════════════════════════════════════════
-       CORNER FRAMES — CSS only, no JS
-    ═══════════════════════════════════════════ */
-      .frame {
-        position: fixed;
-        z-index: 3;
-        pointer-events: none;
-        opacity: 0;
-        animation: fadeIn 2s ease 1.5s forwards;
-      }
-      .frame.tl {
-        top: 0;
-        left: 0;
-      }
-      .frame.tr {
-        top: 0;
-        right: 0;
-        transform: scaleX(-1);
-      }
-      .frame.bl {
-        bottom: 0;
-        left: 0;
-        transform: scaleY(-1);
-      }
-      .frame.br {
-        bottom: 0;
-        right: 0;
-        transform: scale(-1);
-      }
-      @keyframes fadeIn {
-        to {
-          opacity: 1;
-        }
-      }
-
-      /* ═══════════════════════════════════════════
-       STAGE
-    ═══════════════════════════════════════════ */
-      .stage {
-        position: relative;
-        z-index: 10;
-        height: 100vh;
-        display: grid;
-        place-items: center;
-        padding: clamp(1rem, 4vw, 2rem);
-      }
-      .card {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        width: 100%;
-        max-width: 520px;
-      }
-
-      /* ═══════════════════════════════════════════
-       TOP LABEL
-    ═══════════════════════════════════════════ */
-      .label-row {
-        display: flex;
-        align-items: center;
-        gap: clamp(8px, 2vw, 16px);
-        margin-bottom: clamp(0.9rem, 2.5vw, 1.8rem);
-        opacity: 0;
-        animation: riseIn 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.2s forwards;
-      }
-      .lline {
-        height: 1px;
-        width: clamp(28px, 5vw, 52px);
-        background: linear-gradient(90deg, transparent, var(--accent));
-      }
-      .lline.r {
-        background: linear-gradient(90deg, var(--accent), transparent);
-      }
-      .ltext {
-        font-size: clamp(0.48rem, 1.2vw, 0.58rem);
-        font-weight: 200;
-        letter-spacing: 0.4em;
-        text-transform: uppercase;
-        color: var(--accent);
-      }
-      .lgem {
-        width: 4px;
-        height: 4px;
-        background: var(--accent);
-        transform: rotate(45deg);
-        opacity: 0.6;
-        flex-shrink: 0;
-      }
-
-      /* ═══════════════════════════════════════════
-       LOGO — minimal animations on mobile
-    ═══════════════════════════════════════════ */
-      .logo-wrap {
-        margin-top: 20px;
-        position: relative;
-        width: clamp(108px, 22vmin, 172px);
-        height: clamp(108px, 22vmin, 172px);
-        margin-bottom: clamp(1.1rem, 3vw, 1.9rem);
-        opacity: 0;
-        animation: popIn 1.2s cubic-bezier(0.34, 1.56, 0.64, 1) 0.4s forwards;
-      }
-
-      /* Ring — GPU only (transform), no filter/blur */
-      .logo-ring {
+      .yolo-shape {
         position: absolute;
-        inset: -7px;
-        border-radius: 50%;
-        background: conic-gradient(
-          from 0deg,
-          #e8a898,
-          #c9955a,
-          #a8c4a0,
-          #a4c8dc,
-          #c8bce0,
-          #e8a898
-        );
-        opacity: 0.45;
-        will-change: transform;
-        animation: spinRing 12s linear infinite;
-        /* slower on mobile = fewer composited frames */
-      }
-      .logo-gap {
-        position: absolute;
-        inset: -2px;
-        border-radius: 50%;
-        background: var(--bg);
-      }
-      .logo-inner {
-        position: relative;
-        z-index: 2;
-        width: 100%;
-        height: 100%;
-        border-radius: 50%;
-        background: rgba(255, 255, 255, 0.88);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        box-shadow: 0 6px 28px rgba(184, 106, 69, 0.16),
-          inset 0 1px 0 rgba(255, 255, 255, 0.9);
-        will-change: transform;
-        animation: logoFloat 5s ease-in-out infinite;
-      }
-      .logo-inner img {
-        width: 65%;
-        filter: drop-shadow(0 3px 10px rgba(184, 106, 69, 0.2));
-      }
-
-      @keyframes spinRing {
-        to {
-          transform: rotate(360deg);
-        }
-      }
-      @keyframes logoFloat {
-        0%,
-        100% {
-          transform: translateY(0);
-        }
-        50% {
-          transform: translateY(-12px);
-        }
-      }
-      @keyframes popIn {
-        from {
-          opacity: 0;
-          transform: scale(0.25) rotate(-15deg);
-        }
-        to {
-          opacity: 1;
-          transform: scale(1) rotate(0deg);
-        }
-      }
-
-      /* ═══════════════════════════════════════════
-       BRAND
-    ═══════════════════════════════════════════ */
-      .brand {
-        font-family: "Cormorant Garamond", serif;
-        font-size: clamp(7rem, 13vw, 8rem);
-        font-weight: 200;
-        line-height: 0.86;
-        letter-spacing: -0.01em;
-        color: var(--ink);
-        margin-bottom: clamp(0.3rem, 1vw, 0.55rem);
-        opacity: 0;
-        animation: riseIn 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.6s forwards;
-      }
-      .brand .g {
-        display: block;
-      }
-      .brand .a {
-        display: block;
-        font-style: italic;
-        font-weight: 300;
-        background: linear-gradient(135deg, var(--accent), var(--gold));
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-      }
-
-      /* ═══════════════════════════════════════════
-       SUBTITLE
-    ═══════════════════════════════════════════ */
-      .sub-wrap {
-        display: flex;
-        align-items: center;
-        gap: clamp(8px, 2vw, 14px);
-        margin-bottom: clamp(0.8rem, 2vw, 1.2rem);
-        opacity: 0;
-        animation: riseIn 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.78s forwards;
-      }
-      .sline {
-        width: clamp(16px, 3vw, 28px);
-        height: 1px;
-        background: var(--muted);
-        opacity: 0.3;
-      }
-      .stext {
-        font-family: "Kalam", cursive;
-        font-weight: 300;
-        font-size: clamp(1.6rem, 2.5vw, 1.3rem);
-        color: var(--muted);
-        letter-spacing: 0.04em;
-      }
-
-      /* ═══════════════════════════════════════════
-       TAGLINE
-    ═══════════════════════════════════════════ */
-      .tagline {
-        font-size: clamp(1.3rem, 1.6vw, 0.84rem);
-        font-weight: 200;
-        color: var(--muted);
-        line-height: 2;
-        letter-spacing: 0.04em;
-        max-width: 50ch;
-        margin-bottom: clamp(1.1rem, 2.5vw, 1.7rem);
-        opacity: 0;
-        animation: riseIn 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.96s forwards;
-      }
-
-      /* ═══════════════════════════════════════════
-       SOUNDWAVE
-       Mobile: 9 bars only (not 17)
-       Desktop: 17 bars
-       All use transform only — no layout changes
-    ═══════════════════════════════════════════ */
-      .soundwave {
-        display: flex;
-        align-items: center;
-        gap: clamp(2px, 0.4vw, 3px);
-        height: clamp(22px, 4vw, 36px);
-        margin-bottom: clamp(1.1rem, 2.5vw, 1.7rem);
-        opacity: 0;
-        animation: riseIn 0.9s cubic-bezier(0.22, 1, 0.36, 1) 1.1s forwards;
-      }
-      .sw {
-        width: clamp(2px, 0.3vw, 2.5px);
-        border-radius: 10px;
-        background: linear-gradient(to top, var(--accent), var(--rose));
-        opacity: 0.5;
-        will-change: transform;
-        animation: swPulse ease-in-out infinite alternate;
-        transform-origin: bottom;
-      }
-      .sw:nth-child(1) {
-        height: 18%;
-        animation-duration: 0.95s;
-        animation-delay: 0s;
-      }
-      .sw:nth-child(2) {
-        height: 40%;
-        animation-duration: 1.05s;
-        animation-delay: 0.07s;
-      }
-      .sw:nth-child(3) {
-        height: 68%;
-        animation-duration: 0.85s;
-        animation-delay: 0.14s;
-      }
-      .sw:nth-child(4) {
-        height: 90%;
-        animation-duration: 1.1s;
-        animation-delay: 0.21s;
-      }
-      .sw:nth-child(5) {
-        height: 100%;
-        animation-duration: 0.92s;
-        animation-delay: 0.28s;
-      }
-      .sw:nth-child(6) {
-        height: 90%;
-        animation-duration: 1.05s;
-        animation-delay: 0.21s;
-      }
-      .sw:nth-child(7) {
-        height: 68%;
-        animation-duration: 0.85s;
-        animation-delay: 0.14s;
-      }
-      .sw:nth-child(8) {
-        height: 40%;
-        animation-duration: 1.1s;
-        animation-delay: 0.07s;
-      }
-      .sw:nth-child(9) {
-        height: 18%;
-        animation-duration: 0.92s;
-        animation-delay: 0s;
-      }
-      /* Desktop extra bars */
-      .sw.d {
-        display: none;
-      }
-      .sw.d:nth-child(10) {
-        height: 40%;
-        animation-duration: 1.05s;
-        animation-delay: 0.07s;
-      }
-      .sw.d:nth-child(11) {
-        height: 68%;
-        animation-duration: 0.85s;
-        animation-delay: 0.14s;
-      }
-      .sw.d:nth-child(12) {
-        height: 90%;
-        animation-duration: 1.1s;
-        animation-delay: 0.21s;
-      }
-      .sw.d:nth-child(13) {
-        height: 100%;
-        animation-duration: 0.92s;
-        animation-delay: 0.28s;
-      }
-      .sw.d:nth-child(14) {
-        height: 90%;
-        animation-duration: 1.05s;
-        animation-delay: 0.21s;
-      }
-      .sw.d:nth-child(15) {
-        height: 68%;
-        animation-duration: 0.85s;
-        animation-delay: 0.14s;
-      }
-      .sw.d:nth-child(16) {
-        height: 40%;
-        animation-duration: 1.1s;
-        animation-delay: 0.07s;
-      }
-      .sw.d:nth-child(17) {
-        height: 18%;
-        animation-duration: 0.92s;
-        animation-delay: 0s;
-      }
-      @keyframes swPulse {
-        from {
-          transform: scaleY(0.3);
-          opacity: 0.25;
-        }
-        to {
-          transform: scaleY(1);
-          opacity: 0.68;
-        }
-      }
-
-      /* ═══════════════════════════════════════════
-       BADGE
-       NO backdrop-filter on mobile (very expensive)
-    ═══════════════════════════════════════════ */
-      .badge {
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-        padding: clamp(0.32rem, 1vw, 0.48rem) clamp(0.85rem, 2vw, 1.25rem);
-        border-radius: 100px;
-        background: rgba(255, 255, 255, 0.75);
-        border: 1px solid rgba(184, 106, 69, 0.18);
-        box-shadow: 0 2px 16px rgba(184, 106, 69, 0.1);
-        font-size: clamp(0.99rem, 1.4vw, 0.73rem);
-        font-weight: 200;
-        letter-spacing: 0.09em;
-        color: var(--muted);
-        opacity: 0;
-        animation: riseIn 0.9s cubic-bezier(0.22, 1, 0.36, 1) 1.3s forwards;
-      }
-      .badge-pulse {
-        width: 7px;
-        height: 7px;
-        border-radius: 50%;
-        background: var(--accent);
-        will-change: transform;
-        animation: pulseBadge 2.8s ease-in-out infinite;
-      }
-      @keyframes pulseBadge {
-        0% {
-          box-shadow: 0 0 0 0 rgba(184, 106, 69, 0.45);
-          transform: scale(1);
-        }
-        50% {
-          box-shadow: 0 0 0 6px rgba(184, 106, 69, 0);
-          transform: scale(1.1);
-        }
-        100% {
-          box-shadow: 0 0 0 0 rgba(184, 106, 69, 0);
-          transform: scale(1);
-        }
-      }
-
-      /* ═══════════════════════════════════════════
-       TAP HINT
-       No backdrop-filter
-    ═══════════════════════════════════════════ */
-      .tap-overlay {
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        z-index: 200;
-        display: flex;
-        justify-content: center;
-        padding-bottom: clamp(1.4rem, 4vw, 3rem);
+        z-index: -1;
+        opacity: 0.4;
         pointer-events: none;
-        opacity: 0;
-        animation: riseIn 0.9s ease 2.5s forwards;
-        transition: opacity 0.7s;
       }
-      .tap-hint {
-        display: inline-flex;
-        align-items: center;
-        gap: 10px;
-        padding: 0.48rem 1.25rem;
-        border-radius: 100px;
-        background: rgba(255, 255, 255, 0.8);
-        border: 1px solid rgba(184, 106, 69, 0.2);
-        font-size: clamp(0.6rem, 1.3vw, 0.68rem);
-        font-weight: 200;
-        letter-spacing: 0.2em;
-        text-transform: uppercase;
-        color: var(--accent);
-        will-change: transform;
-        animation: floatHint 2.8s ease-in-out infinite;
+      .wavy-divider {
+        position: absolute;
+        bottom: -1px;
+        left: 0;
+        width: 100%;
+        overflow: hidden;
+        line-height: 0;
+        transform: translateY(99%);
+        z-index: 20;
       }
-      .tap-icon {
-        will-change: transform;
-        animation: tapBounce 1.8s ease-in-out infinite;
+      .wavy-divider svg {
+        position: relative;
+        display: block;
+        width: calc(100% + 1.3px);
+        height: 150px;
       }
-      @keyframes floatHint {
-        0%,
-        100% {
-          transform: translateY(0);
-        }
-        50% {
-          transform: translateY(-5px);
-        }
-      }
-      @keyframes tapBounce {
-        0%,
-        100% {
-          transform: scale(1);
-        }
-        50% {
-          transform: scale(1.3);
-        }
+      .wavy-divider .shape-fill {
+        fill: #e8eee4;
       }
 
-      /* ═══════════════════════════════════════════
-       MUSIC BUTTON
-       NO backdrop-filter on mobile
-    ═══════════════════════════════════════════ */
-      .player {
-        position: fixed;
-        bottom: clamp(1rem, 3vw, 1.8rem);
-        right: clamp(1rem, 3vw, 1.8rem);
-        z-index: 100;
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        opacity: 0;
-        animation: riseIn 0.9s ease 2s forwards;
-      }
-      .pl-label {
-        font-size: clamp(0.56rem, 1.2vw, 0.65rem);
-        letter-spacing: 0.18em;
-        text-transform: uppercase;
-        font-weight: 200;
-        color: var(--muted);
-        background: rgba(255, 255, 255, 0.8);
-        padding: 0.33rem 0.85rem;
-        border-radius: 100px;
-        border: 1px solid rgba(184, 106, 69, 0.13);
-        transition: opacity 0.8s, color 0.3s;
-      }
-      .pl-btn {
-        width: clamp(44px, 6vw, 54px);
-        height: clamp(44px, 6vw, 54px);
-        border-radius: 50%;
-        border: 1.5px solid rgba(184, 106, 69, 0.28);
-        background: rgba(255, 255, 255, 0.85);
-        cursor: pointer;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        box-shadow: 0 3px 20px rgba(184, 106, 69, 0.18),
-          inset 0 1px 0 rgba(255, 255, 255, 0.95);
-        will-change: transform;
-        transition: transform 0.28s cubic-bezier(0.34, 1.56, 0.64, 1);
-        position: relative;
-        overflow: hidden;
-      }
-      .pl-btn:hover {
-        transform: scale(1.1);
-      }
-      .pl-btn:active {
-        transform: scale(0.94);
-      }
-      /* Spinning ring when playing */
-      .pl-btn.playing::after {
+      /* Subtle texture overlay for premium feel */
+      .texture-overlay::before {
         content: "";
         position: absolute;
-        inset: -5px;
-        border-radius: 50%;
-        background: conic-gradient(
-          from 0deg,
-          transparent 55%,
-          var(--accent),
-          var(--rose),
-          transparent
-        );
-        will-change: transform;
-        animation: spinBtn 2.2s linear infinite;
-      }
-      @keyframes spinBtn {
-        to {
-          transform: rotate(360deg);
-        }
-      }
-      .pl-btn svg {
-        width: clamp(17px, 2.5vw, 21px);
-        height: clamp(17px, 2.5vw, 21px);
-        position: relative;
-        z-index: 1;
-      }
-
-      .eq-btn {
-        display: none;
-        gap: 2px;
-        align-items: flex-end;
-        height: 15px;
-        position: relative;
-        z-index: 1;
-      }
-      .eq-btn.show {
-        display: flex;
-      }
-      .eq-btn b {
-        display: block;
-        width: 3px;
-        border-radius: 3px;
-        background: linear-gradient(to top, var(--accent), var(--rose));
-        will-change: transform;
-        animation: eqAnim 0.65s ease-in-out infinite alternate;
-      }
-      .eq-btn b:nth-child(1) {
-        height: 5px;
-        animation-delay: 0s;
-      }
-      .eq-btn b:nth-child(2) {
-        height: 13px;
-        animation-delay: 0.12s;
-      }
-      .eq-btn b:nth-child(3) {
-        height: 7px;
-        animation-delay: 0.24s;
-      }
-      .eq-btn b:nth-child(4) {
-        height: 15px;
-        animation-delay: 0.08s;
-      }
-      @keyframes eqAnim {
-        from {
-          transform: scaleY(0.25);
-          opacity: 0.4;
-        }
-        to {
-          transform: scaleY(1.1);
-          opacity: 1;
-        }
-      }
-
-      /* ═══════════════════════════════════════════
-       PETALS — lightweight version
-    ═══════════════════════════════════════════ */
-      .petals {
-        position: fixed;
-        inset: 0;
-        z-index: 2;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.02'/%3E%3C/svg%3E");
         pointer-events: none;
+        z-index: 0;
       }
-      .petal {
+
+      /* Premium input styling */
+      .input-floating-label {
+        position: relative;
+      }
+      .input-floating-label input,
+      .input-floating-label select,
+      .input-floating-label textarea {
+        padding-top: 1.5rem;
+        padding-bottom: 0.5rem;
+      }
+      .input-floating-label label {
         position: absolute;
-        top: -16px;
-        opacity: 0;
-        will-change: transform, opacity;
-        animation: petalFall linear infinite;
+        left: 0;
+        top: 1rem;
+        transition: all 0.2s ease-out;
+        pointer-events: none;
+        color: #80756d; /* outline */
       }
-      @keyframes petalFall {
-        0% {
-          opacity: 0;
-          transform: translateY(0) rotate(0deg) scale(0.55);
-        }
-        8% {
-          opacity: 0.6;
-        }
-        90% {
-          opacity: 0.3;
-        }
-        100% {
-          opacity: 0;
-          transform: translateY(108vh) rotate(360deg) scale(0.9);
-        }
+      .input-floating-label input:focus + label,
+      .input-floating-label input:not(:placeholder-shown) + label,
+      .input-floating-label textarea:focus + label,
+      .input-floating-label textarea:not(:placeholder-shown) + label,
+      .input-floating-label select:focus + label,
+      .input-floating-label select:not([value=""]) + label {
+        transform: translateY(-0.8rem) scale(0.85);
+        transform-origin: left top;
+        color: #322214; /* primary */
       }
 
-      /* ═══════════════════════════════════════════
-       DESKTOP UPGRADES (≥ 768px)
-       Only on desktop do we add expensive effects
-    ═══════════════════════════════════════════ */
-      @media (min-width: 768px) {
-        /* Backdrop filter on badge */
-        .badge {
-          background: rgba(255, 255, 255, 0.58);
-          backdrop-filter: blur(12px);
-          -webkit-backdrop-filter: blur(12px);
-        }
-        /* Backdrop on tap hint */
-        .tap-hint {
-          background: rgba(255, 255, 255, 0.65);
-          backdrop-filter: blur(12px);
-          -webkit-backdrop-filter: blur(12px);
-        }
-        /* Backdrop on music label */
-        .pl-label {
-          background: rgba(255, 255, 255, 0.65);
-          backdrop-filter: blur(10px);
-          -webkit-backdrop-filter: blur(10px);
-        }
-        /* Backdrop on music button */
-        .pl-btn {
-          background: rgba(255, 255, 255, 0.72);
-          backdrop-filter: blur(14px);
-          -webkit-backdrop-filter: blur(14px);
-        }
-        /* Show extra wave bars */
-        .sw.d {
-          display: block;
-        }
-        /* Faster ring spin */
-        .logo-ring {
-          animation-duration: 9s;
-        }
+      /* Underline effect */
+      .premium-input {
+        border: none;
+        border-bottom: 1px solid #d1d1d1; /* concrete */
+        border-radius: 0;
+        background: transparent;
+        box-shadow: none !important;
+        transition: border-color 0.3s ease;
       }
-
-      /* ═══════════════════════════════════════════
-       REDUCE MOTION
-    ═══════════════════════════════════════════ */
-      @media (prefers-reduced-motion: reduce) {
-        .logo-ring,
-        .logo-inner,
-        .soundwave .sw,
-        .petal,
-        .badge-pulse,
-        .tap-hint,
-        .tap-icon,
-        .pl-btn.playing::after,
-        .eq-btn b {
-          animation: none !important;
-        }
-        .logo-wrap,
-        .label-row,
-        .brand,
-        .sub-wrap,
-        .tagline,
-        .soundwave,
-        .badge,
-        .player,
-        .tap-overlay {
-          opacity: 1 !important;
-          transform: none !important;
-          animation: none !important;
-        }
-      }
-
-      @media (max-width: 768px) {
-        /* Reduce the number of petals */
-        .petal {
-          animation-duration: 20s !important; /* Slower animation */
-          animation-iteration-count: 1; /* Only one iteration */
-        }
-
-        /* Simplify soundwave animation */
-        .soundwave .sw {
-          animation: none !important; /* Disable animation */
-          opacity: 0.5; /* Static bars */
-        }
-
-        /* Simplify logo animation */
-        .logo-ring {
-          animation: none !important; /* Disable spinning */
-        }
-        .logo-inner {
-          animation: none !important; /* Disable floating */
-        }
-
-        /* Simplify background gradient */
-        .bg {
-          background: var(--bg); /* Static background */
-        }
-
-        /* Disable corner frame animations */
-        .frame {
-          animation: none !important;
-          opacity: 1; /* Always visible */
-        }
-
-        /* Disable tap hint animation */
-        .tap-hint {
-          animation: none !important;
-          opacity: 1; /* Always visible */
-        }
-
-        /* Disable music button animations */
-        .pl-btn {
-          animation: none !important;
-        }
-        .pl-btn.playing::after {
-          animation: none !important;
-        }
-      }
-
-      /* ═══════════════════════════════════════════
-       HELPERS
-    ═══════════════════════════════════════════ */
-      @keyframes riseIn {
-        from {
-          opacity: 0;
-          transform: translateY(24px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
+      .premium-input:focus {
+        border-bottom-color: #c5a059; /* yolo-gold */
+        outline: none;
       }
     </style>
   </head>
-  <body>
-    <div class="bg"></div>
-
-    <!-- Corner frames -->
-    <svg
-      class="frame tl"
-      width="140"
-      height="140"
-      viewBox="0 0 140 140"
-      fill="none"
+  <body
+    class="bg-yolo-sage text-on-surface antialiased relative min-h-screen overflow-x-hidden texture-overlay"
+  >
+    <!-- TopNavBar Shared Component -->
+    <nav
+      class="fixed top-0 w-full z-50 bg-yolo-charcoal/90 backdrop-blur-xl shadow-[0_20px_40px_rgba(26,26,26,0.05)] border-b border-white/10"
     >
-      <path
-        d="M14 126 L14 14 L126 14"
-        stroke="#b86a45"
-        stroke-width="0.5"
-        opacity="0.22"
-      />
-      <path
-        d="M26 114 L26 26 L114 26"
-        stroke="#b86a45"
-        stroke-width="0.28"
-        opacity="0.12"
-      />
-      <circle cx="14" cy="14" r="2.8" fill="#b86a45" opacity="0.45" />
-      <circle
-        cx="14"
-        cy="14"
-        r="7"
-        stroke="#b86a45"
-        stroke-width="0.4"
-        fill="none"
-        opacity="0.18"
-      />
-      <rect
-        x="11.2"
-        y="11.2"
-        width="5.6"
-        height="5.6"
-        transform="rotate(45 14 14)"
-        stroke="#b86a45"
-        stroke-width="0.4"
-        fill="none"
-        opacity="0.2"
-      />
-    </svg>
-    <svg
-      class="frame tr"
-      width="140"
-      height="140"
-      viewBox="0 0 140 140"
-      fill="none"
-    >
-      <path
-        d="M14 126 L14 14 L126 14"
-        stroke="#b86a45"
-        stroke-width="0.5"
-        opacity="0.22"
-      />
-      <circle cx="14" cy="14" r="2.8" fill="#b86a45" opacity="0.45" />
-      <circle
-        cx="14"
-        cy="14"
-        r="7"
-        stroke="#b86a45"
-        stroke-width="0.4"
-        fill="none"
-        opacity="0.18"
-      />
-    </svg>
-    <svg
-      class="frame bl"
-      width="140"
-      height="140"
-      viewBox="0 0 140 140"
-      fill="none"
-    >
-      <path
-        d="M14 126 L14 14 L126 14"
-        stroke="#b86a45"
-        stroke-width="0.5"
-        opacity="0.22"
-      />
-      <circle cx="14" cy="14" r="2.8" fill="#b86a45" opacity="0.45" />
-    </svg>
-    <svg
-      class="frame br"
-      width="140"
-      height="140"
-      viewBox="0 0 140 140"
-      fill="none"
-    >
-      <path
-        d="M14 126 L14 14 L126 14"
-        stroke="#b86a45"
-        stroke-width="0.5"
-        opacity="0.22"
-      />
-      <circle cx="14" cy="14" r="2.8" fill="#b86a45" opacity="0.45" />
-    </svg>
-
-    <!-- Petals container -->
-    <div class="petals" id="petals"></div>
-
-    <!-- Main -->
-    <div class="stage">
-      <div class="card">
-        <div class="label-row">
-          <!-- <div class="lline"></div>
-          <div class="lgem"></div>
-          <span class="ltext">Est. 2025 · India</span>
-          <div class="lgem"></div>
-          <div class="lline r"></div> -->
-          <div class="badge">
-            <div class="badge-pulse"></div>
-            💖 from Guwahati, Assam
+      <div
+        class="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-6 w-full max-w-container-max mx-auto"
+      >
+        <div
+          class="font-headline-sm text-headline-sm tracking-tight text-yolo-gold italic"
+        >
+          Ghar Apnaa
+        </div>
+        <div class="hidden md:flex space-x-8">
+          <!-- <a
+            class="text-white border-b border-yolo-gold pb-1 font-label-caps text-label-caps"
+            href="#"
+            >Architects</a
+          > -->
+          <a
+            class="text-white/70 hover:text-yolo-gold transition-colors font-label-caps text-label-caps hover:opacity-80 transition-opacity duration-300"
+            href="#ecosystem-of-craft"
+            >Craftsmanship</a
+          >
+          <a
+            class="text-white/70 hover:text-yolo-gold transition-colors font-label-caps text-label-caps hover:opacity-80 transition-opacity duration-300"
+            href="#ecosystem-of-craft"
+            >Process</a
+          >
+          <!-- <a
+            class="text-white/70 hover:text-yolo-gold transition-colors font-label-caps text-label-caps hover:opacity-80 transition-opacity duration-300"
+            href="#"
+            ><br
+          /></a> -->
+        </div>
+        <button
+          class="open-modal-btn bg-yolo-gold text-yolo-charcoal font-label-caps text-label-caps px-6 py-3 rounded-full hover:scale-105 duration-200 ease-in-out transition-transform shadow-[0_0_20px_rgba(197,160,89,0.3)]"
+        >
+          Get Early Access
+        </button>
+      </div>
+    </nav>
+    <main class="relative z-10 pt-[100px] bg-yolo-charcoal">
+      <!-- HERO SECTION -->
+      <section
+        class="relative w-full h-[95vh] min-h-[700px] flex items-center px-margin-mobile md:px-margin-desktop"
+      >
+        <!-- Background Image & Overlay -->
+        <div class="absolute inset-0 z-0 bg-yolo-charcoal">
+          <img
+            alt="Cinematic modern architecture home exterior at dusk"
+            class="w-full h-full object-cover opacity-30 mix-blend-overlay"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAJXBYQGH-AjXo3xaVqQmeA5uUugp5gktsKI3dfJbAFFDOIck8aQvu8KeuNn_9zQrbyqKbt_J9JHtxGmCC24Po3EqCRqlTgxYPLK5QpgX3TqOJyufz1_sHF_22W0_oKK1I9T8bk6cHrmG1ruDtSytfaetMzMair-wcs0iONxQUggwwG-smWecO9_VeD7OQLcunD11KwgaLaPI-jJvIQjkKgWWKYjii8HCtXZIGK5lIKFVXfTRccnoqTC0QdnCh85YE5-woOo7Jn9Xnn"
+          />
+          <div
+            class="absolute inset-0 bg-gradient-to-br from-yolo-charcoal/90 via-yolo-charcoal/70 to-yolo-charcoal/90"
+          ></div>
+          <!-- Organic Abstract Shape -->
+          <svg
+            class="yolo-shape text-yolo-gold/10 w-[800px] h-[800px] -top-[200px] -right-[200px]"
+            fill="currentColor"
+            viewBox="0 0 200 200"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M44.7,-76.4C58.8,-69.2,71.8,-59.1,81.3,-46.3C90.8,-33.5,96.8,-18,97.1,-2.4C97.4,13.2,92,28.9,82.5,41.9C73.1,54.9,59.6,65.3,44.8,72.7C30,80.1,15,84.5,-0.6,85.5C-16.2,86.5,-32.4,84.1,-46.8,76.4C-61.2,68.7,-73.8,55.7,-81.7,40.6C-89.6,25.5,-92.8,8.3,-90.6,-8.2C-88.4,-24.7,-80.8,-40.5,-69.5,-52.1C-58.2,-63.7,-43.2,-71.1,-28.9,-75.6C-14.6,-80.1,0,-81.7,15.3,-78.6C30.6,-75.5,44.7,-76.4,44.7,-76.4Z"
+              transform="translate(100 100)"
+            ></path>
+          </svg>
+        </div>
+        <div
+          class="relative z-10 max-w-container-max mx-auto w-full flex flex-col justify-center h-full pt-12 md:pt-0"
+        >
+          <div class="max-w-4xl relative">
+            <h1
+              class="font-display-lg-mobile text-display-lg-mobile md:font-display-lg md:text-display-lg text-white mb-8 italic leading-tight"
+            >
+              Every Dream Home Begins With the Right People.
+            </h1>
+            <p
+              class="font-body-lg text-body-lg text-white/80 mb-12 max-w-2xl opacity-90 text-xl font-light"
+            >
+              A modern platform where homeowners connect with trusted
+              professionals for construction, renovation, interiors, and
+              everything in between.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-6">
+              <button
+                class="open-modal-btn bg-yolo-gold text-yolo-charcoal font-label-caps text-label-caps px-10 py-5 rounded-full hover:bg-white transition-colors shadow-lg"
+              >
+                Get Early Access
+              </button>
+              <button
+                class="border-b-2 border-yolo-gold text-white font-label-caps text-label-caps px-4 py-4 hover:text-yolo-gold transition-colors flex items-center justify-center gap-3"
+                id="ecosystem-of-craft"
+                href="#ecosystem-of-craft"
+              >
+                Explore How It Works
+                <span class="material-symbols-outlined text-[18px]"
+                  >arrow_forward</span
+                >
+              </button>
+            </div>
+          </div>
+          <!-- Floating Glass Card Stats - Repositioned -->
+          <div
+            class="absolute top-1/4 right-margin-desktop hidden lg:flex flex-col gap-4 bg-white/5 backdrop-blur-2xl p-8 rounded-[2rem] border border-yolo-gold/20 shadow-[0_20px_60px_rgba(0,0,0,0.5)] transform rotate-3"
+          >
+            <div class="flex items-center gap-6">
+              <div
+                class="w-16 h-16 bg-yolo-gold/20 rounded-full flex items-center justify-center"
+              >
+                <span class="material-symbols-outlined text-yolo-gold text-3xl"
+                  >architecture</span
+                >
+              </div>
+              <div>
+                <div class="font-headline-sm text-headline-sm text-white">
+                  500+
+                </div>
+                <div
+                  class="font-label-caps text-label-caps text-yolo-gold uppercase tracking-widest mt-1"
+                >
+                  Verified Professionals
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Scroll Indicator -->
+          <div
+            class="absolute bottom-24 left-margin-mobile md:left-margin-desktop flex flex-col items-center gap-4 opacity-80 z-30"
+          >
+            <div
+              class="font-label-caps text-label-caps text-yolo-gold uppercase tracking-widest text-[10px]"
+            >
+              Scroll
+            </div>
+            <div
+              class="w-[2px] h-16 bg-gradient-to-b from-yolo-gold to-transparent"
+            ></div>
           </div>
         </div>
-
-        <div class="logo-wrap">
-          <div class="logo-ring"></div>
-          <div class="logo-gap"></div>
-          <div class="logo-inner">
-            <img src="./assets/images/penuts.png" alt="GharApnaa Logo" />
+        <!-- Wavy SVG Divider -->
+        <div class="wavy-divider">
+          <svg
+            data-name="Layer 1"
+            preserveAspectRatio="none"
+            viewBox="0 0 1200 120"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              class="shape-fill"
+              d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
+            ></path>
+          </svg>
+        </div>
+      </section>
+      <!-- HOW IT WORKS SECTION -->
+      <section
+        class="pt-48 pb-24 md:pt-56 md:pb-32 px-margin-mobile md:px-margin-desktop bg-yolo-sage w-full relative"
+        id="ecosystem-of-craft"
+      >
+        <!-- Abstract Background Blob -->
+        <div
+          class="absolute top-0 right-0 w-[600px] h-[600px] bg-[#dce5d8] rounded-blob opacity-50 blur-3xl -translate-y-1/2 translate-x-1/4"
+        ></div>
+        <div class="max-w-container-max mx-auto relative z-10">
+          <div class="text-left mb-24 max-w-3xl">
+            <h2
+              class="font-headline-md text-headline-md text-yolo-charcoal mb-6 italic text-6xl"
+            >
+              The Ecosystem of Craft
+            </h2>
+            <p
+              class="font-body-md text-body-md text-yolo-charcoal/70 text-xl font-light"
+            >
+              Bridging the gap between visionary homeowners and meticulous
+              professionals through a streamlined, transparent process.
+            </p>
+          </div>
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24">
+            <!-- Client Side -->
+            <div
+              class="bg-white/60 backdrop-blur-xl border border-white/40 rounded-[2rem] p-8 md:p-14 shadow-2xl relative group transform -rotate-1 hover:rotate-0 transition-transform duration-500"
+            >
+              <div
+                class="mb-10 relative h-72 overflow-hidden rounded-[1.5rem] shadow-inner"
+              >
+                <img
+                  alt="Luxurious modern bedroom interior showing architectural details and premium materials"
+                  class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuCdHjKtqiXKKnVs91qTTFHUHbsadohnQOz3Ra7TiVYBBtxQljYeJhJDHSglv7l8vHmdGyZRjkq9oLd9_Io5o9iCcLeLoOYc_jq_wbz_VfCCCCt1Z3QING9ziv0Y9Mvzpp3N3g_efNKPxuJGxJUlcYcEnTo2fffGUwYQJzzKFbNY7T1v9-9zYMV61eeRu9h9mao-wab_Ht-TdjHtRgS49Kcm6Vh6lXzhYCDCMOuToaW5hAZAotIFboo3FktuePXVX8BBnk1HVn2ntsbE"
+                />
+              </div>
+              <h3
+                class="font-headline-sm text-headline-sm text-yolo-charcoal mb-4"
+              >
+                For Homeowners &amp; Clients
+              </h3>
+              <p class="font-body-md text-body-md text-yolo-charcoal/70 mb-10">
+                Realize your vision with absolute confidence and clarity.
+              </p>
+              <div class="space-y-8 relative">
+                <!-- Timeline Connector -->
+                <div
+                  class="absolute left-[15px] top-4 bottom-8 w-[2px] bg-yolo-gold/30"
+                ></div>
+                <div class="flex gap-8 relative z-10">
+                  <div
+                    class="w-8 h-8 rounded-full bg-yolo-gold flex items-center justify-center shrink-0 mt-1 shadow-md"
+                  >
+                    <div class="w-3 h-3 bg-white rounded-full"></div>
+                  </div>
+                  <div>
+                    <div
+                      class="font-label-caps text-label-caps text-yolo-gold uppercase tracking-widest mb-2"
+                    >
+                      Step 01
+                    </div>
+                    <div
+                      class="font-body-md text-body-md text-yolo-charcoal font-medium"
+                    >
+                      Post Your Project details
+                    </div>
+                  </div>
+                </div>
+                <div class="flex gap-8 relative z-10">
+                  <div
+                    class="w-8 h-8 rounded-full bg-white border-2 border-yolo-gold/30 flex items-center justify-center shrink-0 mt-1"
+                  >
+                    <div class="w-3 h-3 bg-yolo-gold/30 rounded-full"></div>
+                  </div>
+                  <div>
+                    <div
+                      class="font-label-caps text-label-caps text-yolo-charcoal/50 uppercase tracking-widest mb-2"
+                    >
+                      Step 02
+                    </div>
+                    <div class="font-body-md text-body-md text-yolo-charcoal">
+                      Receive curated bids
+                    </div>
+                  </div>
+                </div>
+                <div class="flex gap-8 relative z-10">
+                  <div
+                    class="w-8 h-8 rounded-full bg-white border-2 border-yolo-gold/30 flex items-center justify-center shrink-0 mt-1"
+                  >
+                    <div class="w-3 h-3 bg-yolo-gold/30 rounded-full"></div>
+                  </div>
+                  <div>
+                    <div
+                      class="font-label-caps text-label-caps text-yolo-charcoal/50 uppercase tracking-widest mb-2"
+                    >
+                      Step 03
+                    </div>
+                    <div class="font-body-md text-body-md text-yolo-charcoal">
+                      Compare verified experts
+                    </div>
+                  </div>
+                </div>
+                <div class="flex gap-8 relative z-10">
+                  <div
+                    class="w-8 h-8 rounded-full bg-white border-2 border-yolo-gold/30 flex items-center justify-center shrink-0 mt-1"
+                  >
+                    <div class="w-3 h-3 bg-yolo-gold/30 rounded-full"></div>
+                  </div>
+                  <div>
+                    <div
+                      class="font-label-caps text-label-caps text-yolo-charcoal/50 uppercase tracking-widest mb-2"
+                    >
+                      Step 04
+                    </div>
+                    <div class="font-body-md text-body-md text-yolo-charcoal">
+                      Choose your professional
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Professional Side -->
+            <div
+              class="bg-yolo-charcoal rounded-[2rem] p-8 md:p-14 lg:mt-32 shadow-2xl relative group transform rotate-2 hover:rotate-0 transition-transform duration-500 text-white"
+            >
+              <div
+                class="mb-10 relative h-72 overflow-hidden rounded-[1.5rem] shadow-inner"
+              >
+                <img
+                  alt="Construction workers and professionals examining site plans and working on structure"
+                  class="w-full h-full object-cover opacity-80 mix-blend-luminosity transition-all duration-1000 group-hover:scale-110 group-hover:mix-blend-normal"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuCHbzuRiswlB3c8pDIM6d1reJqT2MWti_Fn1ZH2iu9LIkoYIytVnO17XbGlaUqeIHD0DQYMMVp3L66FLRhLv5tfujnqnHx6iJNC0RiunFXzwM6ezWUVs_tQNr_Umup38JsWL4cH9WuKObO92okjz8KTGziXZM3bcUaDnPktqGoJ4B_nGZLSIOSlW3yOMijB-Esmw7zqElObQsVYbk1bRqqLctGzn341SI51VlDgc7BphcqLWHKy9QLCN2s_ZSzFcUjduUIn3eZDmQqj"
+                />
+              </div>
+              <h3 class="font-headline-sm text-headline-sm text-yolo-gold mb-4">
+                For Professionals
+              </h3>
+              <p class="font-body-md text-body-md text-white/70 mb-10">
+                Access premium clients and focus on what you do best: building.
+              </p>
+              <div class="space-y-8 relative">
+                <!-- Timeline Connector -->
+                <div
+                  class="absolute left-[15px] top-4 bottom-8 w-[2px] bg-white/20"
+                ></div>
+                <div class="flex gap-8 relative z-10">
+                  <div
+                    class="w-8 h-8 rounded-full bg-yolo-gold flex items-center justify-center shrink-0 mt-1 shadow-md"
+                  >
+                    <div class="w-3 h-3 bg-yolo-charcoal rounded-full"></div>
+                  </div>
+                  <div>
+                    <div
+                      class="font-label-caps text-label-caps text-yolo-gold uppercase tracking-widest mb-2"
+                    >
+                      Phase A
+                    </div>
+                    <div
+                      class="font-body-md text-body-md text-white font-medium"
+                    >
+                      Discover aligned projects
+                    </div>
+                  </div>
+                </div>
+                <div class="flex gap-8 relative z-10">
+                  <div
+                    class="w-8 h-8 rounded-full bg-yolo-charcoal border-2 border-white/20 flex items-center justify-center shrink-0 mt-1"
+                  >
+                    <div class="w-3 h-3 bg-white/20 rounded-full"></div>
+                  </div>
+                  <div>
+                    <div
+                      class="font-label-caps text-label-caps text-white/50 uppercase tracking-widest mb-2"
+                    >
+                      Phase B
+                    </div>
+                    <div class="font-body-md text-body-md text-white/80">
+                      Submit detailed proposals
+                    </div>
+                  </div>
+                </div>
+                <div class="flex gap-8 relative z-10">
+                  <div
+                    class="w-8 h-8 rounded-full bg-yolo-charcoal border-2 border-white/20 flex items-center justify-center shrink-0 mt-1"
+                  >
+                    <div class="w-3 h-3 bg-white/20 rounded-full"></div>
+                  </div>
+                  <div>
+                    <div
+                      class="font-label-caps text-label-caps text-white/50 uppercase tracking-widest mb-2"
+                    >
+                      Phase C
+                    </div>
+                    <div class="font-body-md text-body-md text-white/80">
+                      Connect directly with clients (No Agents or Middlemen)
+                    </div>
+                  </div>
+                </div>
+                <div class="flex gap-8 relative z-10">
+                  <div
+                    class="w-8 h-8 rounded-full bg-yolo-charcoal border-2 border-white/20 flex items-center justify-center shrink-0 mt-1"
+                  >
+                    <div class="w-3 h-3 bg-white/20 rounded-full"></div>
+                  </div>
+                  <div>
+                    <div
+                      class="font-label-caps text-label-caps text-white/50 uppercase tracking-widest mb-2"
+                    >
+                      Phase D
+                    </div>
+                    <div class="font-body-md text-body-md text-white/80">
+                      Grow your business
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-
-        <h1 class="brand">
-          <span class="g">Ghar</span>
-          <span class="a">Apnaa</span>
-        </h1>
-
-        <div class="sub-wrap">
-          <div class="sline"></div>
-          <p class="stext">Something beautiful is coming</p>
-          <div class="sline"></div>
+      </section>
+      <!-- TRUST / VALUE SECTION -->
+      <section
+        class="py-24 md:py-32 px-margin-mobile md:px-margin-desktop bg-yolo-sage relative z-10 border-t border-yolo-gold/20"
+      >
+        <!-- Abstract Background Blob -->
+        <div
+          class="absolute bottom-0 left-0 w-[800px] h-[800px] bg-[#dce5d8] rounded-blob opacity-60 blur-3xl translate-y-1/3 -translate-x-1/4"
+        ></div>
+        <div class="max-w-container-max mx-auto relative z-10">
+          <div
+            class="flex flex-col md:flex-row justify-between items-end mb-20 gap-8"
+          >
+            <div class="max-w-2xl">
+              <h2
+                class="font-headline-md text-headline-md text-yolo-charcoal mb-6 italic text-6xl"
+              >
+                Engineered for Excellence
+              </h2>
+              <p
+                class="font-body-md text-body-md text-yolo-charcoal/70 text-xl font-light"
+              >
+                A foundation built on transparency, vetting, and seamless
+                communication. We remove the friction from the building process.
+              </p>
+            </div>
+            <button
+              class="border-b-2 border-yolo-charcoal text-yolo-charcoal font-label-caps text-label-caps pb-2 hover:text-yolo-gold hover:border-yolo-gold transition-colors uppercase tracking-widest"
+            >
+              View Platform Standards
+            </button>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+            <!-- Cards -->
+            <div
+              class="p-10 bg-white/50 backdrop-blur-sm rounded-[2rem] border border-white hover:shadow-xl transition-all duration-300 group transform hover:-translate-y-2"
+            >
+              <span
+                class="material-symbols-outlined text-[40px] text-yolo-gold mb-8 block group-hover:scale-110 transition-transform"
+                >verified_user</span
+              >
+              <h4
+                class="font-headline-sm text-headline-sm text-yolo-charcoal mb-4"
+              >
+                Verified Professionals
+              </h4>
+              <p class="font-body-md text-body-md text-yolo-charcoal/70">
+                Every architect, builder, and designer undergoes rigorous
+                vetting before joining the platform.
+              </p>
+            </div>
+            <div
+              class="p-10 bg-white/80 backdrop-blur-sm rounded-[2rem] border border-white shadow-lg transition-all duration-300 group transform translate-y-6 hover:-translate-y-2"
+            >
+              <span
+                class="material-symbols-outlined text-[40px] text-yolo-gold mb-8 block group-hover:scale-110 transition-transform"
+                >account_balance_wallet</span
+              >
+              <h4
+                class="font-headline-sm text-headline-sm text-yolo-charcoal mb-4"
+              >
+                Transparent Bidding
+              </h4>
+              <p class="font-body-md text-body-md text-yolo-charcoal/70">
+                Clear, comparable proposals. No hidden fees or ambiguous line
+                items in your project quotes.
+              </p>
+            </div>
+            <div
+              class="p-10 bg-white/50 backdrop-blur-sm rounded-[2rem] border border-white hover:shadow-xl transition-all duration-300 group transform hover:-translate-y-2"
+            >
+              <span
+                class="material-symbols-outlined text-[40px] text-yolo-gold mb-8 block group-hover:scale-110 transition-transform"
+                >hub</span
+              >
+              <h4
+                class="font-headline-sm text-headline-sm text-yolo-charcoal mb-4"
+              >
+                Smart Matching
+              </h4>
+              <p class="font-body-md text-body-md text-yolo-charcoal/70">
+                Algorithmic alignment connecting your specific project needs
+                with the most qualified local experts.
+              </p>
+            </div>
+            <div
+              class="p-10 bg-white/80 backdrop-blur-sm rounded-[2rem] border border-white shadow-lg transition-all duration-300 group transform translate-y-6 hover:-translate-y-2 lg:translate-y-0"
+            >
+              <span
+                class="material-symbols-outlined text-[40px] text-yolo-gold mb-8 block group-hover:scale-110 transition-transform"
+                >speed</span
+              >
+              <h4
+                class="font-headline-sm text-headline-sm text-yolo-charcoal mb-4"
+              >
+                Faster Discovery
+              </h4>
+              <p class="font-body-md text-body-md text-yolo-charcoal/70">
+                Bypass weeks of research. Access a curated network of
+                professionals ready to bid on your vision.
+              </p>
+            </div>
+            <div
+              class="p-10 bg-white/50 backdrop-blur-sm rounded-[2rem] border border-white hover:shadow-xl transition-all duration-300 group transform hover:-translate-y-2 lg:translate-y-6 lg:hover:-translate-y-0"
+            >
+              <span
+                class="material-symbols-outlined text-[40px] text-yolo-gold mb-8 block group-hover:scale-110 transition-transform"
+                >forum</span
+              >
+              <h4
+                class="font-headline-sm text-headline-sm text-yolo-charcoal mb-4"
+              >
+                Direct Communication
+              </h4>
+              <p class="font-body-md text-body-md text-yolo-charcoal/70">
+                Integrated messaging and file sharing to keep project
+                discussions centralized and documented.
+              </p>
+            </div>
+            <div
+              class="p-10 bg-white/80 backdrop-blur-sm rounded-[2rem] border border-white shadow-lg transition-all duration-300 group transform translate-y-6 hover:-translate-y-2 lg:translate-y-12 lg:hover:translate-y-6"
+            >
+              <span
+                class="material-symbols-outlined text-[40px] text-yolo-gold mb-8 block group-hover:scale-110 transition-transform"
+                >architecture</span
+              >
+              <h4
+                class="font-headline-sm text-headline-sm text-yolo-charcoal mb-4"
+              >
+                Future-ready Ecosystem
+              </h4>
+              <p class="font-body-md text-body-md text-yolo-charcoal/70">
+                A holistic approach to property development, integrating modern
+                tech with traditional craftsmanship.
+              </p>
+            </div>
+          </div>
         </div>
+      </section>
+      <!-- COMING SOON / MODAL TRIGGER SECTION -->
+      <section
+        class="py-40 px-margin-mobile md:px-margin-desktop bg-yolo-charcoal text-center relative overflow-hidden mt-20"
+      >
+        <div class="absolute inset-0 z-0">
+          <img
+            alt="Modern architectural pool area highlighting elegant exterior design"
+            class="w-full h-full object-cover opacity-20 mix-blend-overlay"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuD3ZHBJ1NrBwcLmIucWSMlaFa1mhzkTurq6oWRp_2WYkrbEq-yfuTiyfV9xTnw21aozQpYpmo4Z6J5rd1-Gi6OClzcZTAy8JYwcgxTDeQ53hk7zEufR5MSCdui1alC8RGimXnRV1WsgFRxXJRY5tLy7AjlRN9o1bTTUIyrZPJb6pKnqdKPCnEBwMXjffZ0AM-0NzWV_bKeekCTfYuEC0pdC-1fXvKwg6qU-YEUWiqDXU9TmhVJmQ7xdMxFyQieCOtNgJsj3La2hCZ2v"
+          />
+          <div
+            class="absolute inset-0 bg-gradient-to-t from-yolo-charcoal to-transparent"
+          ></div>
+        </div>
+        <div class="relative z-10 max-w-4xl mx-auto">
+          <h2
+            class="font-display-lg-mobile text-display-lg-mobile md:font-display-lg md:text-display-lg text-yolo-gold mb-8 italic"
+          >
+            We’re Going Live Very Soon.
+          </h2>
+          <p
+            class="font-body-lg text-body-lg text-white/80 mb-16 text-xl font-light"
+          >
+            Currently onboarding leading architectural practices, builders, and
+            interior designers. Secure your place in the future of property
+            development.
+          </p>
+          <button
+            class="open-modal-btn bg-yolo-gold text-yolo-charcoal font-label-caps text-label-caps px-12 py-6 rounded-full hover:bg-white transition-colors inline-block shadow-2xl hover:scale-105 duration-300"
+          >
+            Request Early Access
+          </button>
+        </div>
+      </section>
+    </main>
+    <!-- Footer Shared Component -->
+    <footer
+      class="bg-yolo-charcoal w-full py-16 border-t border-white/10 relative z-20"
+    >
+      <div
+        class="flex flex-col md:flex-row justify-between items-start gap-12 px-margin-mobile md:px-margin-desktop w-full max-w-container-max mx-auto"
+      >
+        <div class="flex flex-col gap-6 max-w-sm">
+          <div class="font-headline-sm text-headline-sm text-yolo-gold italic">
+            Ghar Apnaa
+          </div>
+          <div class="font-body-md text-body-md text-white/50">
+            © 2024 Ghar Apnaa. Architectural Integrity. Lumding ❤️ - Assam
+          </div>
+        </div>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 w-full md:w-auto">
+          <a
+            class="font-body-md text-body-md text-white/70 hover:text-yolo-gold transition-colors"
+            href="#"
+            >The Vision</a
+          >
+          <a
+            class="font-body-md text-body-md text-white/70 hover:text-yolo-gold transition-colors"
+            href="#"
+            >Professional Network</a
+          >
+          <a
+            class="font-body-md text-body-md text-white/70 hover:text-yolo-gold transition-colors"
+            href="#"
+            >Privacy Policy</a
+          >
+          <a
+            class="font-body-md text-body-md text-white/70 hover:text-yolo-gold transition-colors"
+            href="#"
+            >Contact</a
+          >
+        </div>
+      </div>
+    </footer>
 
-        <p class="tagline">
-          Har sapne ko mile apnaa address<br />
-          India ke har ghar ke liye - Launching Soon
-        </p>
+    <!-- Modal Overlay -->
+    <div
+      id="earlyAccessModal"
+      class="hidden fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-margin-mobile md:p-margin-desktop backdrop-blur-xl bg-yolo-charcoal/80 transition-opacity duration-300"
+    >
+      <!-- Modal Container -->
+      <div
+        class="relative w-full max-w-lg bg-[#F9F7F2]/95 border border-concrete/50 rounded-2xl shadow-[0_20px_40px_rgba(26,26,26,0.1)] overflow-hidden"
+      >
+        <!-- Close Button -->
+        <button
+          id="closeModalBtn"
+          aria-label="Close modal"
+          class="absolute top-6 right-6 text-on-surface-variant hover:text-yolo-charcoal transition-colors z-10"
+          type="button"
+        >
+          <span class="material-symbols-outlined" data-icon="close">close</span>
+        </button>
+        <div class="p-8 md:p-12">
+          <!-- Form Section -->
+          <div id="modalFormSection">
+            <!-- Header -->
+            <div class="mb-10 text-center">
+              <h2
+                class="font-headline-md text-headline-md text-yolo-charcoal mb-2"
+              >
+                Request Early Access
+              </h2>
+              <p class="font-body-md text-body-md text-yolo-charcoal/70">
+                Join the future of Client-Professional collaboration.
+              </p>
+            </div>
+            <!-- Form -->
+            <form id="earlyAccessForm" class="space-y-8">
+              <!-- Who You Are Dropdown -->
+              <div class="input-floating-label">
+                <select
+                  class="premium-input w-full block font-body-md text-body-md text-yolo-charcoal bg-transparent appearance-none cursor-pointer"
+                  id="role"
+                  name="role"
+                  required=""
+                >
+                  <option disabled="" hidden="" selected="" value=""></option>
+                  <option value="Architect">Architect</option>
+                  <option value="Builder">Builder</option>
+                  <option value="Interior Designer">Interior Designer</option>
+                  <option value="Contractor">Contractor</option>
+                  <option value="Carpenter">Carpenter</option>
+                  <option value="Electrician">Electrician</option>
+                  <option value="Plumber">Plumber</option>
+                  <option value="Civil Engineer">Civil Engineer</option>
+                  <option value="Landscape Designer">Landscape Designer</option>
+                  <option value="Other">Other</option>
+                </select>
+                <label class="font-body-md text-body-md" for="role"
+                  >Who You Are</label
+                >
+                <div
+                  class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-yolo-charcoal/50 pt-4"
+                >
+                  <span
+                    class="material-symbols-outlined"
+                    data-icon="expand_more"
+                    >expand_more</span
+                  >
+                </div>
+              </div>
+              <!-- Full Name -->
+              <div class="input-floating-label">
+                <input
+                  class="premium-input w-full block font-body-md text-body-md text-yolo-charcoal bg-transparent"
+                  id="fullName"
+                  name="fullName"
+                  placeholder=" "
+                  required=""
+                  type="text"
+                />
+                <label class="font-body-md text-body-md" for="fullName"
+                  >Full Name</label
+                >
+              </div>
+              <!-- Email Address -->
+              <div class="input-floating-label">
+                <input
+                  class="premium-input w-full block font-body-md text-body-md text-yolo-charcoal bg-transparent"
+                  id="email"
+                  name="email"
+                  placeholder=" "
+                  required=""
+                  type="email"
+                />
+                <label class="font-body-md text-body-md" for="email"
+                  >Email Address</label
+                >
+              </div>
+              <!-- Phone Number -->
+              <div class="relative flex items-end">
+                <div
+                  class="flex items-center border-b border-concrete mr-4 pb-2 focus-within:border-yolo-gold transition-colors"
+                >
+                  <span class="mr-2 text-yolo-charcoal/70">🇮🇳</span>
+                  <span class="font-body-md text-body-md text-yolo-charcoal"
+                    >+91</span
+                  >
+                </div>
+                <div class="input-floating-label flex-grow">
+                  <input
+                    class="premium-input w-full block font-body-md text-body-md text-yolo-charcoal bg-transparent"
+                    id="phone"
+                    name="phone"
+                    pattern="[0-9]{10}"
+                    placeholder=" "
+                    required=""
+                    title="Please enter exactly 10 digits"
+                    type="tel"
+                  />
+                  <label class="font-body-md text-body-md" for="phone"
+                    >Phone Number</label
+                  >
+                </div>
+              </div>
+              <!-- Notes / Message -->
+              <div class="input-floating-label pt-4">
+                <textarea
+                  class="premium-input w-full block font-body-md text-body-md text-yolo-charcoal bg-transparent resize-none"
+                  id="message"
+                  name="message"
+                  placeholder=" "
+                  rows="2"
+                ></textarea>
+                <label class="font-body-md text-body-md" for="message"
+                  >Notes / Message (Optional)</label
+                >
+              </div>
+              <!-- Submit Button -->
+              <div class="pt-6">
+                <button
+                  class="w-full bg-yolo-charcoal text-white font-label-caps text-label-caps py-4 rounded-xl border-t border-white/10 hover:bg-yolo-gold hover:text-yolo-charcoal transition-all duration-300 transform active:scale-[0.98] shadow-sm flex items-center justify-center gap-2"
+                  type="submit"
+                >
+                  <span class="">Submit</span>
+                  <span
+                    class="material-symbols-outlined text-[18px]"
+                    data-icon="arrow_forward"
+                    >arrow_forward</span
+                  >
+                </button>
+              </div>
+            </form>
+          </div>
 
-        <!-- 9 bars always, 8 extra bars hidden on mobile -->
-        <div class="soundwave">
-          <div class="sw"></div>
-          <div class="sw"></div>
-          <div class="sw"></div>
-          <div class="sw"></div>
-          <div class="sw"></div>
-          <div class="sw"></div>
-          <div class="sw"></div>
-          <div class="sw"></div>
-          <div class="sw"></div>
-          <div class="sw d"></div>
-          <div class="sw d"></div>
-          <div class="sw d"></div>
-          <div class="sw d"></div>
-          <div class="sw d"></div>
-          <div class="sw d"></div>
-          <div class="sw d"></div>
-          <div class="sw d"></div>
+          <!-- Success Section (Hidden initially) -->
+          <div id="modalSuccessSection" class="hidden text-center py-8">
+            <div
+              class="w-16 h-16 bg-yolo-sage rounded-full flex items-center justify-center mx-auto mb-6"
+            >
+              <span
+                class="material-symbols-outlined text-yolo-charcoal text-3xl"
+                >check</span
+              >
+            </div>
+            <h2
+              class="font-headline-md text-headline-md text-yolo-charcoal mb-4"
+            >
+              Thank You!
+            </h2>
+            <p class="font-body-md text-body-md text-yolo-charcoal/70 mb-8">
+              We have received your request. You are officially on the list.
+              Keep an eye on your inbox—we’ll be in touch soon with your early
+              access invitation.
+            </p>
+            <button
+              id="closeSuccessBtn"
+              class="bg-yolo-gold text-yolo-charcoal font-label-caps text-label-caps px-8 py-4 rounded-full hover:bg-white transition-colors shadow-md"
+            >
+              Return to Website
+            </button>
+          </div>
         </div>
       </div>
     </div>
-
-    <!-- Autoplay hint -->
-    <div class="tap-overlay" id="tapOverlay">
-      <div class="tap-hint">
-        <span class="tap-icon">🎵</span>
-        Tap anywhere for music
-      </div>
-    </div>
-
-    <!-- Music button -->
-    <div class="player">
-      <div class="pl-label" id="plLabel">Music</div>
-      <button class="pl-btn" id="musicBtn" aria-label="Toggle music">
-        <svg id="iconPlay" viewBox="0 0 24 24" fill="none">
-          <circle cx="12" cy="12" r="9.3" stroke="#b86a45" stroke-width="0.9" />
-          <path d="M10.5 8.8l5.5 3.2-5.5 3.2V8.8z" fill="#b86a45" />
-        </svg>
-        <div class="eq-btn" id="eqBtn"><b></b><b></b><b></b><b></b></div>
-      </button>
-    </div>
-
-    <!--
-    ══════════════════════════════════════════════
-    🎵 MUSIC SETUP (2 easy steps):
-    1. Create folder in repo:  assets/music/
-    2. Upload your .mp3 as:    background.mp3
-    ══════════════════════════════════════════════
-  -->
-    <audio id="bgMusic" loop preload="none">
-      <!-- preload="none" = don't load until needed = faster page load on mobile -->
-      <source src="./assets/music/background.mp3" type="audio/mpeg" />
-    </audio>
 
     <script>
-      // ── DEVICE CHECK ─────────────────────────────────────
-      const isMobile =
-        window.innerWidth < 768 ||
-        /Mobi|Android|iPhone|iPad/i.test(navigator.userAgent);
+      document.addEventListener("DOMContentLoaded", () => {
+        // Modal Logic
+        const modal = document.getElementById("earlyAccessModal");
+        const openBtns = document.querySelectorAll(".open-modal-btn");
+        const closeBtn = document.getElementById("closeModalBtn");
+        const formSection = document.getElementById("modalFormSection");
+        const successSection = document.getElementById("modalSuccessSection");
+        const form = document.getElementById("earlyAccessForm");
+        const closeSuccessBtn = document.getElementById("closeSuccessBtn");
 
-      // ── MUSIC ─────────────────────────────────────────────
-      const audio = document.getElementById("bgMusic");
-      const btn = document.getElementById("musicBtn");
-      const eq = document.getElementById("eqBtn");
-      const icon = document.getElementById("iconPlay");
-      const label = document.getElementById("plLabel");
-      const overlay = document.getElementById("tapOverlay");
-      let playing = false;
-      let interacted = false;
-
-      function startPlay() {
-        audio.volume = 0;
-        audio
-          .play()
-          .then(() => {
-            playing = true;
-            icon.style.display = "none";
-            eq.classList.add("show");
-            btn.classList.add("playing");
-            label.textContent = "♪ Playing";
-            label.style.color = "#b86a45";
-            // Smooth fade in
-            let v = 0;
-            const t = setInterval(() => {
-              v = Math.min(v + 0.05, 0.8);
-              audio.volume = v;
-              if (v >= 0.8) clearInterval(t);
-            }, 80);
-          })
-          .catch(() => {});
-      }
-
-      function stopPlay() {
-        let v = audio.volume;
-        const t = setInterval(() => {
-          v = Math.max(v - 0.06, 0);
-          audio.volume = v;
-          if (v <= 0) {
-            clearInterval(t);
-            audio.pause();
-            playing = false;
-            icon.style.display = "";
-            eq.classList.remove("show");
-            btn.classList.remove("playing");
-            label.textContent = "Music";
-            label.style.color = "";
-          }
-        }, 55);
-      }
-
-      function hideOverlay() {
-        overlay.style.opacity = "0";
-        setTimeout(() => overlay.remove(), 800);
-      }
-
-      function onFirstInteraction(e) {
-        if (interacted || btn.contains(e.target)) return;
-        interacted = true;
-        hideOverlay();
-        startPlay();
-        document.removeEventListener("click", onFirstInteraction);
-        document.removeEventListener("touchstart", onFirstInteraction);
-      }
-      document.addEventListener("click", onFirstInteraction);
-      document.addEventListener("touchstart", onFirstInteraction, {
-        passive: true,
-      });
-
-      btn.addEventListener("click", (e) => {
-        e.stopPropagation();
-        if (!interacted) {
-          interacted = true;
-          hideOverlay();
-          document.removeEventListener("click", onFirstInteraction);
-          document.removeEventListener("touchstart", onFirstInteraction);
+        function openModal() {
+          modal.classList.remove("hidden");
+          document.body.style.overflow = "hidden"; // Prevent background scrolling
         }
-        playing ? stopPlay() : startPlay();
-      });
 
-      // Hide label after 5s
-      setTimeout(() => {
-        label.style.opacity = "0";
-        label.style.transition = "opacity 1s";
-      }, 5000);
-      btn.addEventListener("mouseenter", () => {
-        label.style.opacity = "1";
-      });
-      btn.addEventListener("mouseleave", () => {
-        if (!playing) label.style.opacity = "0";
-      });
+        function closeModal() {
+          modal.classList.add("hidden");
+          document.body.style.overflow = "";
 
-      // ── PETALS ─────────────────────────────────────────────
-      // Mobile: 4 petals, slow | Tablet: 10 | Desktop: 22
-      const count = isMobile ? 4 : window.innerWidth < 1025 ? 10 : 22;
-      const wrap = document.getElementById("petals");
-      const colors = [
-        "rgba(223,168,152,0.5)",
-        "rgba(237,212,196,0.5)",
-        "rgba(201,149,90,0.35)",
-        "rgba(168,196,160,0.45)",
-        "rgba(164,200,220,0.4)",
-        "rgba(200,188,224,0.45)",
-      ];
-      const shapes = [
-        "50% 50% 30% 70%/60% 40% 60% 40%",
-        "60% 40% 70% 30%/40% 50% 50% 60%",
-        "50%",
-      ];
+          // Reset form state after a short delay so user doesn't see it switch while animating
+          setTimeout(() => {
+            form.reset();
+            formSection.classList.remove("hidden");
+            successSection.classList.add("hidden");
 
-      for (let i = 0; i < count; i++) {
-        const p = document.createElement("div");
-        p.className = "petal";
-        const s = Math.random() * 8 + 4; // Smaller petals
-        const dur = isMobile ? Math.random() * 6 + 10 : Math.random() * 12 + 10;
-        p.style.cssText = `
-        width:${s}px;
-        height:${s * 0.68}px;
-        left:${Math.random() * 100}%;
-        background:${colors[i % colors.length]};
-        border-radius:${shapes[i % shapes.length]};
-        animation-duration:${dur}s;
-        animation-delay:${Math.random() * 10}s;
-      `;
-        wrap.appendChild(p);
-      }
+            // Reset floating label state for select
+            const select = document.getElementById("role");
+            if (select) select.removeAttribute("value");
+          }, 300);
+        }
+
+        openBtns.forEach((btn) =>
+          btn.addEventListener("click", (e) => {
+            e.preventDefault();
+            openModal();
+          })
+        );
+
+        if (closeBtn) closeBtn.addEventListener("click", closeModal);
+        if (closeSuccessBtn)
+          closeSuccessBtn.addEventListener("click", closeModal);
+
+        // Close if clicking outside the modal container
+        if (modal) {
+          modal.addEventListener("click", (e) => {
+            if (e.target === modal) {
+              closeModal();
+            }
+          });
+        }
+
+        // Form Submit Logic
+        if (form) {
+          form.addEventListener("submit", (e) => {
+            e.preventDefault();
+
+            const submitBtn = form.querySelector('button[type="submit"]');
+            const originalBtnContent = submitBtn.innerHTML;
+            submitBtn.innerHTML = "<span>Submitting...</span>";
+            submitBtn.disabled = true;
+
+            const formData = new FormData();
+            formData.append(
+              "entry.1932650826",
+              document.getElementById("role").value
+            );
+            formData.append(
+              "entry.1432614813",
+              document.getElementById("fullName").value
+            );
+            formData.append(
+              "entry.219772986",
+              document.getElementById("email").value
+            );
+            formData.append(
+              "entry.47146516",
+              document.getElementById("phone").value
+            );
+            formData.append(
+              "entry.1586122843",
+              document.getElementById("message").value
+            );
+
+            fetch(
+              "https://docs.google.com/forms/d/e/1FAIpQLScvFMwAyn9E5aYdf4q7FnZHkmC4a4fMbHJR4-dboYRXsQUSHQ/formResponse",
+              {
+                method: "POST",
+                mode: "no-cors",
+                body: formData,
+              }
+            )
+              .then(() => {
+                // Hide form, show success message
+                formSection.classList.add("hidden");
+                successSection.classList.remove("hidden");
+                submitBtn.innerHTML = originalBtnContent;
+                submitBtn.disabled = false;
+              })
+              .catch((error) => {
+                console.error("Error submitting form:", error);
+                // Fallback to show success anyway since no-cors hides real status
+                formSection.classList.add("hidden");
+                successSection.classList.remove("hidden");
+                submitBtn.innerHTML = originalBtnContent;
+                submitBtn.disabled = false;
+              });
+          });
+        }
+
+        // Floating label state for select
+        const select = document.getElementById("role");
+        if (select) {
+          select.addEventListener("change", function () {
+            if (this.value !== "") {
+              this.setAttribute("value", this.value);
+            } else {
+              this.removeAttribute("value");
+            }
+          });
+
+          // Initial check for select
+          if (select.value !== "") {
+            select.setAttribute("value", select.value);
+          }
+        }
+      });
     </script>
   </body>
 </html>
