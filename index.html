@@ -140,7 +140,6 @@
         width: 100%;
         overflow: hidden;
         line-height: 0;
-        transform: translateY(99%);
         z-index: 20;
       }
       .wavy-divider svg {
@@ -148,6 +147,7 @@
         display: block;
         width: calc(100% + 1.3px);
         height: 150px;
+        transform: rotate(180deg);
       }
       .wavy-divider .shape-fill {
         fill: #e8eee4;
@@ -257,7 +257,7 @@
     <main class="relative z-10 pt-[100px] bg-yolo-charcoal overflow-x-hidden">
       <!-- HERO SECTION -->
       <section
-        class="relative w-full h-[95vh] min-h-[700px] flex items-center px-margin-mobile md:px-margin-desktop overflow-hidden"
+        class="relative w-full min-h-[100svh] flex items-center py-24 md:py-0 px-margin-mobile md:px-margin-desktop overflow-hidden"
       >
         <!-- Background Image & Overlay -->
         <div class="absolute inset-0 z-0 bg-yolo-charcoal">
@@ -283,7 +283,7 @@
           </svg>
         </div>
         <div
-          class="relative z-10 max-w-container-max mx-auto w-full flex flex-col justify-center h-full pt-12 md:pt-0"
+          class="relative z-10 max-w-container-max mx-auto w-full pt-16 pb-24 md:pt-0 md:pb-0"
         >
           <div class="max-w-4xl relative">
             <img
@@ -309,30 +309,15 @@
               >
                 Get Early Access
               </button>
-              <!-- <button
-                class="border-b-2 border-yolo-gold text-white font-label-caps text-label-caps px-4 py-4 hover:text-yolo-gold transition-colors flex items-center justify-center gap-3"
-                id="ecosystem-of-craft"
+              <a
                 href="#ecosystem-of-craft"
-              >
-                Explore How It Works
-                <span class="material-symbols-outlined text-[18px]"
-                  >arrow_downward</span
-                >
-              </button> -->
-              <button
-                onclick="
-                  document
-                    .getElementById('ecosystem-of-craft')
-                    .scrollIntoView({ behavior: 'smooth' })
-                "
                 class="border-b-2 border-yolo-gold text-white font-label-caps text-label-caps px-4 py-4 hover:text-yolo-gold transition-colors flex items-center justify-center gap-3"
               >
                 Explore How It Works
-
                 <span class="material-symbols-outlined text-[18px]">
                   arrow_downward
                 </span>
-              </button>
+              </a>
             </div>
           </div>
           <!-- Floating Glass Card Stats - Repositioned -->
@@ -371,8 +356,8 @@
             <div
               class="w-[2px] h-16 bg-gradient-to-b from-yolo-gold to-transparent"
             ></div>
-          </div>
-        </div> -->
+          </div> -->
+        </div>
         <!-- Wavy SVG Divider -->
         <div class="wavy-divider">
           <svg
