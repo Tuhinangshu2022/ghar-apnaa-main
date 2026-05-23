@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html class="scroll-smooth" lang="en">
   <head>
     <meta charset="utf-8" />
@@ -254,10 +254,10 @@
         </button>
       </div>
     </nav>
-    <main class="relative z-10 pt-[100px] bg-yolo-charcoal">
+    <main class="relative z-10 pt-[100px] bg-yolo-charcoal overflow-x-hidden">
       <!-- HERO SECTION -->
       <section
-        class="relative w-full h-[95vh] min-h-[700px] flex items-center px-margin-mobile md:px-margin-desktop"
+        class="relative w-full h-[95vh] min-h-[700px] flex items-center px-margin-mobile md:px-margin-desktop overflow-hidden"
       >
         <!-- Background Image & Overlay -->
         <div class="absolute inset-0 z-0 bg-yolo-charcoal">
@@ -286,6 +286,11 @@
           class="relative z-10 max-w-container-max mx-auto w-full flex flex-col justify-center h-full pt-12 md:pt-0"
         >
           <div class="max-w-4xl relative">
+            <img
+              src="./asset/logo.png"
+              alt="Ghar Apnaa Logo"
+              class="block mx-auto w-32 h-32 md:w-40 md:h-40 rounded-2xl mb-8 object-cover"
+            />
             <h1
               class="font-display-lg-mobile text-display-lg-mobile md:font-display-lg md:text-display-lg text-white mb-8 italic leading-tight"
             >
@@ -304,15 +309,29 @@
               >
                 Get Early Access
               </button>
-              <button
+              <!-- <button
                 class="border-b-2 border-yolo-gold text-white font-label-caps text-label-caps px-4 py-4 hover:text-yolo-gold transition-colors flex items-center justify-center gap-3"
                 id="ecosystem-of-craft"
                 href="#ecosystem-of-craft"
               >
                 Explore How It Works
                 <span class="material-symbols-outlined text-[18px]"
-                  >arrow_forward</span
+                  >arrow_downward</span
                 >
+              </button> -->
+              <button
+                onclick="
+                  document
+                    .getElementById('ecosystem-of-craft')
+                    .scrollIntoView({ behavior: 'smooth' })
+                "
+                class="border-b-2 border-yolo-gold text-white font-label-caps text-label-caps px-4 py-4 hover:text-yolo-gold transition-colors flex items-center justify-center gap-3"
+              >
+                Explore How It Works
+
+                <span class="material-symbols-outlined text-[18px]">
+                  arrow_downward
+                </span>
               </button>
             </div>
           </div>
@@ -371,7 +390,7 @@
       </section>
       <!-- HOW IT WORKS SECTION -->
       <section
-        class="pt-48 pb-24 md:pt-56 md:pb-32 px-margin-mobile md:px-margin-desktop bg-yolo-sage w-full relative"
+        class="pt-48 pb-24 md:pt-56 md:pb-32 px-margin-mobile md:px-margin-desktop bg-yolo-sage w-full relative overflow-hidden"
         id="ecosystem-of-craft"
       >
         <!-- Abstract Background Blob -->
@@ -592,7 +611,7 @@
       </section>
       <!-- TRUST / VALUE SECTION -->
       <section
-        class="py-24 md:py-32 px-margin-mobile md:px-margin-desktop bg-yolo-sage relative z-10 border-t border-yolo-gold/20"
+        class="py-24 md:py-32 px-margin-mobile md:px-margin-desktop bg-yolo-sage relative z-10 border-t border-yolo-gold/20 overflow-hidden"
       >
         <!-- Abstract Background Blob -->
         <div
@@ -810,7 +829,7 @@
     >
       <!-- Modal Container -->
       <div
-        class="relative w-full max-w-lg bg-[#F9F7F2]/95 border border-concrete/50 rounded-2xl shadow-[0_20px_40px_rgba(26,26,26,0.1)] overflow-hidden"
+        class="relative w-full max-w-lg bg-[#F9F7F2]/95 border border-concrete/50 rounded-2xl shadow-[0_20px_40px_rgba(26,26,26,0.1)] overflow-y-auto max-h-[90vh]"
       >
         <!-- Close Button -->
         <button
@@ -1021,7 +1040,7 @@
           btn.addEventListener("click", (e) => {
             e.preventDefault();
             openModal();
-          })
+          }),
         );
 
         if (closeBtn) closeBtn.addEventListener("click", closeModal);
@@ -1050,23 +1069,23 @@
             const formData = new FormData();
             formData.append(
               "entry.1932650826",
-              document.getElementById("role").value
+              document.getElementById("role").value,
             );
             formData.append(
               "entry.1432614813",
-              document.getElementById("fullName").value
+              document.getElementById("fullName").value,
             );
             formData.append(
               "entry.219772986",
-              document.getElementById("email").value
+              document.getElementById("email").value,
             );
             formData.append(
               "entry.47146516",
-              document.getElementById("phone").value
+              document.getElementById("phone").value,
             );
             formData.append(
               "entry.1586122843",
-              document.getElementById("message").value
+              document.getElementById("message").value,
             );
 
             fetch(
@@ -1075,7 +1094,7 @@
                 method: "POST",
                 mode: "no-cors",
                 body: formData,
-              }
+              },
             )
               .then(() => {
                 // Hide form, show success message
