@@ -10,7 +10,7 @@
       rel="stylesheet"
     />
     <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&amp;family=Playfair+Display:wght@400;600;700&amp;family=Montserrat:wght@300;400;500&amp;family=Inter:wght@400;600&amp;display=swap"
+      href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@300;400;500;600;700;800;900&amp;display=swap"
       rel="stylesheet"
     />
     <script id="tailwind-config">
@@ -19,9 +19,9 @@
         theme: {
           extend: {
             colors: {
-              "yolo-charcoal": "#1a1a1a",
-              "yolo-sage": "#e8eee4",
-              "yolo-gold": "#c5a059",
+              "yolo-charcoal": "#514FC6",
+              "yolo-sage": "#EEF0FF",
+              "yolo-gold": "#34D399",
               "inverse-primary": "#dec1ac",
               concrete: "#D1D1D1",
               "surface-tint": "#705a49",
@@ -71,7 +71,7 @@
               "inverse-surface": "#313030",
               "outline-variant": "#d2c4bb",
               "on-primary-fixed": "#28180b",
-              "sage-tint": "#8E9481",
+              "sage-tint": "#8892B0",
             },
             borderRadius: {
               DEFAULT: "0.125rem",
@@ -88,13 +88,13 @@
               "margin-desktop": "64px",
             },
             fontFamily: {
-              "display-lg-mobile": ["Cormorant Garamond", "serif"],
-              "body-lg": ["Montserrat"],
-              "headline-sm": ["Cormorant Garamond", "serif"],
-              "headline-md": ["Cormorant Garamond", "serif"],
-              "display-lg": ["Cormorant Garamond", "serif"],
-              "body-md": ["Montserrat"],
-              "label-caps": ["Inter"],
+              "display-lg-mobile": ["League Spartan", "sans-serif"],
+              "body-lg": ["League Spartan", "sans-serif"],
+              "headline-sm": ["League Spartan", "sans-serif"],
+              "headline-md": ["League Spartan", "sans-serif"],
+              "display-lg": ["League Spartan", "sans-serif"],
+              "body-md": ["League Spartan", "sans-serif"],
+              "label-caps": ["League Spartan", "sans-serif"],
             },
             fontSize: {
               "display-lg-mobile": [
@@ -133,24 +133,14 @@
         opacity: 0.4;
         pointer-events: none;
       }
-      .wavy-divider {
+      .straight-divider {
         position: absolute;
-        bottom: -1px;
+        bottom: 0;
         left: 0;
         width: 100%;
-        overflow: hidden;
-        line-height: 0;
+        height: 4px;
+        background: #eef0ff;
         z-index: 20;
-      }
-      .wavy-divider svg {
-        position: relative;
-        display: block;
-        width: calc(100% + 1.3px);
-        height: 150px;
-        transform: rotate(180deg);
-      }
-      .wavy-divider .shape-fill {
-        fill: #e8eee4;
       }
 
       /* Subtle texture overlay for premium feel */
@@ -182,7 +172,7 @@
         top: 1rem;
         transition: all 0.2s ease-out;
         pointer-events: none;
-        color: #80756d; /* outline */
+        color: #6b7280; /* outline */
       }
       .input-floating-label input:focus + label,
       .input-floating-label input:not(:placeholder-shown) + label,
@@ -192,7 +182,7 @@
       .input-floating-label select:not([value=""]) + label {
         transform: translateY(-0.8rem) scale(0.85);
         transform-origin: left top;
-        color: #322214; /* primary */
+        color: #0d1b4d; /* primary */
       }
 
       /* Underline effect */
@@ -205,7 +195,7 @@
         transition: border-color 0.3s ease;
       }
       .premium-input:focus {
-        border-bottom-color: #c5a059; /* yolo-gold */
+        border-bottom-color: #34d399; /* yolo-green */
         outline: none;
       }
     </style>
@@ -221,9 +211,9 @@
         class="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-6 w-full max-w-container-max mx-auto"
       >
         <div
-          class="font-headline-sm text-headline-sm tracking-tight text-yolo-gold italic"
+          class="font-headline-sm text-headline-sm tracking-tight text-yolo-gold"
         >
-          Ghar Apnaa
+          GHAR apnaa
         </div>
         <div class="hidden md:flex space-x-8">
           <!-- <a
@@ -248,7 +238,7 @@
           /></a> -->
         </div>
         <button
-          class="open-modal-btn bg-yolo-gold text-yolo-charcoal font-label-caps text-label-caps px-6 py-3 rounded-full hover:scale-105 duration-200 ease-in-out transition-transform shadow-[0_0_20px_rgba(197,160,89,0.3)]"
+          class="open-modal-btn bg-yolo-gold text-yolo-charcoal font-label-caps text-label-caps px-6 py-3 rounded-full hover:scale-105 duration-200 ease-in-out transition-transform shadow-[0_0_20px_rgba(52,211,153,0.3)]"
         >
           Get Early Access
         </button>
@@ -292,7 +282,7 @@
               class="block mx-auto mt-16 md:mt-8 w-32 h-32 md:w-40 md:h-40 rounded-2xl mb-8 object-cover"
             />
             <h1
-              class="font-display-lg-mobile text-display-lg-mobile md:font-display-lg md:text-display-lg text-white mb-8 italic leading-tight"
+              class="font-display-lg-mobile text-display-lg-mobile md:font-display-lg md:text-display-lg text-white mb-8 leading-tight"
             >
               Every Dream Home Begins With the Right People.
             </h1>
@@ -358,20 +348,8 @@
             ></div>
           </div> -->
         </div>
-        <!-- Wavy SVG Divider -->
-        <div class="wavy-divider">
-          <svg
-            data-name="Layer 1"
-            preserveAspectRatio="none"
-            viewBox="0 0 1200 120"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              class="shape-fill"
-              d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
-            ></path>
-          </svg>
-        </div>
+        <!-- Straight Divider -->
+        <div class="straight-divider"></div>
       </section>
       <!-- HOW IT WORKS SECTION -->
       <section
@@ -380,12 +358,12 @@
       >
         <!-- Abstract Background Blob -->
         <div
-          class="absolute top-0 right-0 w-[600px] h-[600px] bg-[#dce5d8] rounded-blob opacity-50 blur-3xl -translate-y-1/2 translate-x-1/4"
+          class="absolute top-0 right-0 w-[600px] h-[600px] bg-[#c7cfff] rounded-blob opacity-50 blur-3xl -translate-y-1/2 translate-x-1/4"
         ></div>
         <div class="max-w-container-max mx-auto relative z-10">
           <div class="text-left mb-24 max-w-3xl">
             <h2
-              class="font-headline-md text-headline-md text-yolo-charcoal mb-6 italic text-6xl"
+              class="font-headline-md text-headline-md text-yolo-charcoal mb-6 text-6xl"
             >
               The Ecosystem of Craft
             </h2>
@@ -600,7 +578,7 @@
       >
         <!-- Abstract Background Blob -->
         <div
-          class="absolute bottom-0 left-0 w-[800px] h-[800px] bg-[#dce5d8] rounded-blob opacity-60 blur-3xl translate-y-1/3 -translate-x-1/4"
+          class="absolute bottom-0 left-0 w-[800px] h-[800px] bg-[#c7cfff] rounded-blob opacity-60 blur-3xl translate-y-1/3 -translate-x-1/4"
         ></div>
         <div class="max-w-container-max mx-auto relative z-10">
           <div
@@ -608,7 +586,7 @@
           >
             <div class="max-w-2xl">
               <h2
-                class="font-headline-md text-headline-md text-yolo-charcoal mb-6 italic text-6xl"
+                class="font-headline-md text-headline-md text-yolo-charcoal mb-6 text-6xl"
               >
                 Engineered for Excellence
               </h2>
@@ -748,7 +726,7 @@
         </div>
         <div class="relative z-10 max-w-4xl mx-auto">
           <h2
-            class="font-display-lg-mobile text-display-lg-mobile md:font-display-lg md:text-display-lg text-yolo-gold mb-8 italic"
+            class="font-display-lg-mobile text-display-lg-mobile md:font-display-lg md:text-display-lg text-yolo-gold mb-8"
           >
             We’re Going Live Very Soon.
           </h2>
@@ -775,31 +753,31 @@
         class="flex flex-col md:flex-row justify-between items-start gap-12 px-margin-mobile md:px-margin-desktop w-full max-w-container-max mx-auto"
       >
         <div class="flex flex-col gap-6 max-w-sm">
-          <div class="font-headline-sm text-headline-sm text-yolo-gold italic">
-            Ghar Apnaa
+          <div class="font-headline-sm text-headline-sm text-yolo-gold">
+            GHAR Apnaa
           </div>
           <div class="font-body-md text-body-md text-white/50">
-            © 2024 Ghar Apnaa. Architectural Integrity. Lumding ❤️ - Assam
+            © 2026 Ghar Apnaa. Prop Tech. Lumding ❤️ - Assam
           </div>
         </div>
         <div class="grid grid-cols-2 md:grid-cols-4 gap-8 w-full md:w-auto">
           <a
             class="font-body-md text-body-md text-white/70 hover:text-yolo-gold transition-colors"
-            href="#"
+            href="./index.html#ecosystem-of-craft"
             >The Vision</a
           >
           <a
             class="font-body-md text-body-md text-white/70 hover:text-yolo-gold transition-colors"
-            href="#"
-            >Professional Network</a
+            href="./blogs.html"
+            >Blogs</a
           >
           <a
             class="font-body-md text-body-md text-white/70 hover:text-yolo-gold transition-colors"
-            href="#"
+            href="./privacy-policy.html"
             >Privacy Policy</a
           >
           <a
-            class="font-body-md text-body-md text-white/70 hover:text-yolo-gold transition-colors"
+            class="font-body-md text-body-md text-white/70 hover:text-yolo-gold transition-colors open-contact-btn cursor-pointer"
             href="#"
             >Contact</a
           >
@@ -814,7 +792,7 @@
     >
       <!-- Modal Container -->
       <div
-        class="relative w-full max-w-lg bg-[#F9F7F2]/95 border border-concrete/50 rounded-2xl shadow-[0_20px_40px_rgba(26,26,26,0.1)] overflow-y-auto max-h-[90vh]"
+        class="relative w-full max-w-lg bg-[#F0F2FF]/95 border border-concrete/50 rounded-2xl shadow-[0_20px_40px_rgba(26,26,26,0.1)] overflow-y-auto max-h-[90vh]"
       >
         <!-- Close Button -->
         <button
@@ -989,6 +967,105 @@
       </div>
     </div>
 
+    <!-- Contact Us Modal -->
+    <div
+      id="contactModal"
+      class="hidden fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-margin-mobile md:p-margin-desktop backdrop-blur-xl bg-yolo-charcoal/80 transition-opacity duration-300"
+    >
+      <div
+        class="relative w-full max-w-md bg-[#F0F2FF]/95 border border-concrete/50 rounded-2xl shadow-[0_20px_40px_rgba(26,26,26,0.1)] overflow-hidden"
+      >
+        <!-- Close Button -->
+        <button
+          id="closeContactModalBtn"
+          aria-label="Close contact modal"
+          class="absolute top-6 right-6 text-on-surface-variant hover:text-yolo-charcoal transition-colors z-10"
+          type="button"
+        >
+          <span class="material-symbols-outlined">close</span>
+        </button>
+        <div class="p-8 md:p-12">
+          <!-- Header -->
+          <div class="mb-10 text-center">
+            <div
+              class="w-14 h-14 bg-yolo-charcoal rounded-full flex items-center justify-center mx-auto mb-5"
+            >
+              <span class="material-symbols-outlined text-yolo-gold text-2xl"
+                >contact_support</span
+              >
+            </div>
+            <h2
+              class="font-headline-md text-headline-md text-yolo-charcoal mb-2"
+            >
+              Contact Us
+            </h2>
+            <p class="font-body-md text-body-md text-yolo-charcoal/60">
+              We'd love to hear from you. Reach out anytime.
+            </p>
+          </div>
+          <!-- Contact Info -->
+          <div class="space-y-5">
+            <a
+              href="mailto:business@gharapnaa.in"
+              class="flex items-center gap-5 p-5 bg-white/70 border border-white rounded-xl hover:border-yolo-gold/40 hover:shadow-md transition-all duration-300 group"
+            >
+              <div
+                class="w-12 h-12 bg-yolo-charcoal rounded-full flex items-center justify-center shrink-0 group-hover:bg-yolo-gold transition-colors duration-300"
+              >
+                <span
+                  class="material-symbols-outlined text-yolo-gold group-hover:text-yolo-charcoal text-xl transition-colors duration-300"
+                  >mail</span
+                >
+              </div>
+              <div>
+                <div
+                  class="font-label-caps text-label-caps text-yolo-charcoal/50 uppercase tracking-widest mb-1"
+                >
+                  Email
+                </div>
+                <div
+                  class="font-body-md text-body-md text-yolo-charcoal font-medium"
+                >
+                  business@gharapnaa.in
+                </div>
+              </div>
+            </a>
+            <a
+              href="tel:+919395417501"
+              class="flex items-center gap-5 p-5 bg-white/70 border border-white rounded-xl hover:border-yolo-gold/40 hover:shadow-md transition-all duration-300 group"
+            >
+              <div
+                class="w-12 h-12 bg-yolo-charcoal rounded-full flex items-center justify-center shrink-0 group-hover:bg-yolo-gold transition-colors duration-300"
+              >
+                <span
+                  class="material-symbols-outlined text-yolo-gold group-hover:text-yolo-charcoal text-xl transition-colors duration-300"
+                  >call</span
+                >
+              </div>
+              <div>
+                <div
+                  class="font-label-caps text-label-caps text-yolo-charcoal/50 uppercase tracking-widest mb-1"
+                >
+                  Phone
+                </div>
+                <div
+                  class="font-body-md text-body-md text-yolo-charcoal font-medium"
+                >
+                  +91 93954 17501
+                </div>
+              </div>
+            </a>
+          </div>
+          <!-- Location note -->
+          <p
+            class="font-body-md text-body-md text-yolo-charcoal/40 text-center mt-8 text-sm"
+          >
+            Based in Lumding, Assam 🇮🇳 &mdash; Available Mon–Sat, 10am–6pm IST
+          </p>
+        </div>
+      </div>
+    </div>
+
     <script>
       document.addEventListener("DOMContentLoaded", () => {
         // Modal Logic
@@ -1114,6 +1191,38 @@
           if (select.value !== "") {
             select.setAttribute("value", select.value);
           }
+        }
+        // Contact Modal Logic
+        const contactModal = document.getElementById("contactModal");
+        const openContactBtns = document.querySelectorAll(".open-contact-btn");
+        const closeContactModalBtn = document.getElementById(
+          "closeContactModalBtn",
+        );
+
+        function openContactModal() {
+          contactModal.classList.remove("hidden");
+          document.body.style.overflow = "hidden";
+        }
+
+        function closeContactModal() {
+          contactModal.classList.add("hidden");
+          document.body.style.overflow = "";
+        }
+
+        openContactBtns.forEach((btn) =>
+          btn.addEventListener("click", (e) => {
+            e.preventDefault();
+            openContactModal();
+          }),
+        );
+
+        if (closeContactModalBtn)
+          closeContactModalBtn.addEventListener("click", closeContactModal);
+
+        if (contactModal) {
+          contactModal.addEventListener("click", (e) => {
+            if (e.target === contactModal) closeContactModal();
+          });
         }
       });
     </script>
